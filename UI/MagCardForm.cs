@@ -184,7 +184,7 @@ namespace GTI.Modules.Shared
 
                 //m_cancelButton.Location = WinButton2Loc;
                 //Point WinButton2Loc = new Point(172, 159);
-                m_cancelButton.Location = new Point(172, 170);//KNC
+                m_cancelButton.Location = new Point(172, 170);
                 m_cancelButton.Size = WinButtonSize;
                 m_cancelButton.Font = WinButtonFont;
                 m_cancelButton.ImageNormal = Resources.BlueButtonUp;
