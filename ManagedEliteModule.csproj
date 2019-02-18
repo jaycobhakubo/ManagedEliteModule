@@ -1,0 +1,473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{308EF933-6B4E-48B2-9C54-85318FE50C63}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GTI.Modules.Shared</RootNamespace>
+    <AssemblyName>ManagedEliteModule</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>ManagedEliteModuleKey.snk</AssemblyOriginatorKeyFile>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <ApplicationIcon>Res\Elite.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EliteMCPLib, Version=1.0.3.0, Culture=neutral, PublicKeyToken=ff6ec3863080ef2d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>.\EliteMCPLib.dll</HintPath>
+    </Reference>
+    <Reference Include="IDAutomation.NetAssembly, Version=6.7.9.0, Culture=neutral, PublicKeyToken=5fc6adb61ca442c5" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\Accrual.cs" />
+    <Compile Include="Business\AccrualAccount.cs" />
+    <Compile Include="Business\Address.cs" />
+    <Compile Include="Business\Bank.cs" />
+    <Compile Include="Business\BarcodeHelper.cs" />
+    <Compile Include="Business\Bingo.cs" />
+    <Compile Include="Business\CardLevel.cs" />
+    <Compile Include="Business\CardPositionMapHandle.cs" />
+    <Compile Include="Business\Channel.cs" />
+    <Compile Include="Business\Charity.cs" />
+    <Compile Include="Business\Company.cs" />
+    <Compile Include="Business\GameCategory.cs" />
+    <Compile Include="Business\Currency.cs" />
+    <Compile Include="Business\Denomination.cs" />
+    <Compile Include="Business\Device.cs" />
+    <Compile Include="Business\DiscountItem.cs" />
+    <Compile Include="Business\DistributorFee.cs" />
+    <Compile Include="Business\ExtensionMethods.cs" />
+    <Compile Include="Business\IntWordConverter.cs" />
+    <Compile Include="Business\Location.cs" />
+    <Compile Include="Business\Machine.cs" />
+    <Compile Include="Business\ModuleComm.cs" />
+    <Compile Include="Business\ModuleException.cs" />
+    <Compile Include="Business\Operator.cs" />
+    <Compile Include="Business\Package.cs" />
+    <Compile Include="Business\PaperExchangeItem.cs" />
+    <Compile Include="Business\PayoutSchedule.cs" />
+    <Compile Include="Business\Perm.cs" />
+    <Compile Include="Business\Player.cs" />
+    <Compile Include="Business\PlayerComp.cs" />
+    <Compile Include="Business\ProductItem.cs" />
+    <Compile Include="Business\Program.cs" />
+    <Compile Include="Business\ReportData.cs" />
+    <Compile Include="Business\SchedProgram.cs" />
+    <Compile Include="Business\ValidationPackage.cs" />
+    <Compile Include="Business\Receipt.cs" />
+    <Compile Include="Business\SecurityHelper.cs" />
+    <Compile Include="Business\ServerExceptions.cs" />
+    <Compile Include="Business\Staff.cs" />
+    <Compile Include="Data\AddRemoveFindScanCodeMessage.cs" />
+    <Compile Include="Data\BarcodeReader.cs" />
+    <Compile Include="Data\ClientDataStoreAccessor.cs" />
+    <Compile Include="Data\CommonValues.cs" />
+    <Compile Include="Data\FinalizeCardPositionMapMessage.cs" />
+    <Compile Include="Data\GetProgramDataMessage.cs" />
+    <Compile Include="Data\RemoveCardPositionsMapMessage.cs" />
+    <Compile Include="Data\SetCardPositionMapSequenceMessage.cs" />
+    <Compile Include="Data\SetCardPositionMapInfoMessage.cs" />
+    <Compile Include="Data\GetStarCodeInfoMessage.cs" />
+    <Compile Include="Data\GetInventoryItemBySerialAuditMessage.cs" />
+    <Compile Include="Data\GetInventorySerialNumbersMessage.cs" />
+    <Compile Include="Data\GetCBBFavoriteCountsMessage.cs" />
+    <Compile Include="Data\GetPreSaleCategoryMaxCardLimitsPerGameMessage.cs" />
+    <Compile Include="Data\GetAllReports.cs" />
+    <Compile Include="Data\GetCBBInfoFromTransactionMessage.cs" />
+    <Compile Include="Data\GetGameCategoriesMessage.cs" />
+    <Compile Include="Data\GetScanCodesMessage.cs" />
+    <Compile Include="Data\GetProductItemsMessage.cs" />
+    <Compile Include="Data\GetSessionGameMaxCardLimitsMessage.cs" />
+    <Compile Include="Data\ExchangePaperMessage.cs" />
+    <Compile Include="Data\GetProductByBarcodeMessage.cs" />
+    <Compile Include="Data\GetAllowForFunGamesMessage.cs" />
+    <Compile Include="Data\GetCardLevelMessage.cs" />
+    <Compile Include="Data\GetChannelDataMessage.cs" />
+    <Compile Include="Data\GetCharityDataMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\GetClientDataStoreMessage.cs" />
+    <Compile Include="Data\GetPaperExchangeDataMessage.cs" />
+    <Compile Include="Data\GetSaleTendersMessage.cs" />
+    <Compile Include="Data\GetSessionLinearGameNumbers.cs" />
+    <Compile Include="Data\GetSetSaleTextMessage.cs" />
+    <Compile Include="Data\GetStaffBankList.cs" />
+    <Compile Include="Data\GetStaffTotalDueMessage.cs" />
+    <Compile Include="Data\GetDiscountMessage.cs" />
+    <Compile Include="Data\GetPackageItemMessage.cs" />
+    <Compile Include="Data\GetCardPositionMapsMessage.cs" />
+    <Compile Include="Data\GetTenderSubTypesMessage.cs" />
+    <Compile Include="Data\GetValidationReceiptStatusMessage.cs" />
+    <Compile Include="Data\CreditModuleOnline.cs" />
+    <Compile Include="Data\EnhancedRegularExpression.cs" />
+    <Compile Include="Data\GetAccuralMessage.cs" />
+    <Compile Include="Data\GetDailyExchangeRatesMessage.cs" />
+    <Compile Include="Data\GetValidationPackagesMessage.cs" />
+    <Compile Include="Data\GetDistributorFeesMessage.cs" />
+    <Compile Include="Data\GetHallSettingsMessage.cs" />
+    <Compile Include="Data\GetLicenseFileSettings.cs" />
+    <Compile Include="Data\GetMachineSettingsOnlyMessage.cs" />
+    <Compile Include="Data\FindPlayerByCardMessage.cs" />
+    <Compile Include="Data\GetAddressDataMessage.cs" />
+    <Compile Include="Data\GetCardLevelDataMessage.cs" />
+    <Compile Include="Data\GetCompanyDataMessage.cs" />
+    <Compile Include="Data\GetCreditMessage.cs" />
+    <Compile Include="Data\GetCurrencyDefinitionData.cs" />
+    <Compile Include="Data\GetDeviceHardwareAttribsMessage.cs" />
+    <Compile Include="Data\GetDeviceTypeDataMessage.cs" />
+    <Compile Include="Data\GetGameCardsMessage.cs" />
+    <Compile Include="Data\GetGamingDateMessage.cs" />
+    <Compile Include="Data\GetLocationDataMessage.cs" />
+    <Compile Include="Data\GetMachineDataMessage.cs" />
+    <Compile Include="Data\GetOperatorCompleteMessage.cs" />
+    <Compile Include="Data\GetPayoutSchedulesMessage.cs" />
+    <Compile Include="Data\GetPermFilesMessage.cs" />
+    <Compile Include="Data\GetPlayerDataMessage.cs" />
+    <Compile Include="Data\GetPlayerImageMessage.cs" />
+    <Compile Include="Data\GetPlayerListMessage.cs" />
+    <Compile Include="Data\GetPlayerLocationList.cs" />
+    <Compile Include="Data\GetPlayerMagCardPINMessage.cs" />
+    <Compile Include="Data\GetPlayerReceipts.cs" />
+    <Compile Include="Data\GetPlayerStatusCode.cs" />
+    <Compile Include="Data\GetPlayerTierListMessage.cs" />
+    <Compile Include="Data\GetReportListMessage.cs" />
+    <Compile Include="Data\GetReportMessage.cs" />
+    <Compile Include="Data\GetSessionCharityDataMessage.cs" />
+    <Compile Include="Data\GetSettingsMessage.cs" />
+    <Compile Include="Data\GetSettingsOperatorMessage.cs" />
+    <Compile Include="Data\GetStaffDataMessage.cs" />
+    <Compile Include="Data\GetStaffModuleFeaturesMessage.cs" />
+    <Compile Include="Data\GetStaffModulesMessage.cs" />
+    <Compile Include="Data\GetStaffOperatorsMessage.cs" />
+    <Compile Include="Data\GetTenderTypesMessage.cs" />
+    <Compile Include="Data\IsLinkedBingoOnlineMessge.cs" />
+    <Compile Include="Data\Logger.cs" />
+    <Compile Include="Data\MagCardReader.cs" />
+    <Compile Include="Data\Printer.cs" />
+    <Compile Include="Data\RawPrinterHelper.cs" />
+    <Compile Include="Data\RedeemCompMessage.cs" />
+    <Compile Include="Data\ReportInfo.cs" />
+    <Compile Include="Data\ServerMessage.cs" />
+    <Compile Include="Data\GetPlayerCompsMessage.cs" />
+    <Compile Include="Data\SetChannelData.cs" />
+    <Compile Include="Data\SetActiveTenderTypesMessage.cs" />
+    <Compile Include="Data\SetCharityData.cs" />
+    <Compile Include="Data\SetClientDataStoreMessage.cs" />
+    <Compile Include="Data\SetDefaultValidationPackageMessage.cs" />
+    <Compile Include="Data\SetHallSettingsMessage.cs" />
+    <Compile Include="Data\SetLocationData.cs" />
+    <Compile Include="Data\SetMachineSettingsExMessage.cs" />
+    <Compile Include="Data\SetMachineSettingsMessage.cs" />
+    <Compile Include="Data\SetOperatorCompleteMessage.cs" />
+    <Compile Include="Data\SetOperatorDeviceFeesMessage.cs" />
+    <Compile Include="Data\SetPlayerMagCardPINMessage.cs" />
+    <Compile Include="Data\SetPackageItemMessage.cs" />
+    <Compile Include="Data\SetReceiptTenderMessage.cs" />
+    <Compile Include="Data\SetSystemSettingsMessage.cs" />
+    <Compile Include="Data\SetTenderTypesStatusMessage.cs" />
+    <Compile Include="Data\SetUserDefineReports.cs" />
+    <Compile Include="Data\TenderResolutionMessage.cs" />
+    <Compile Include="Data\UKGetPermDefMessage.cs" />
+    <Compile Include="Data\UnlockPayoutMachineMessage.cs" />
+    <Compile Include="Data\UpdAddressData.cs" />
+    <Compile Include="Data\UpdCompanyDataMessage.cs" />
+    <Compile Include="Data\UpdSettingsOperatorMessage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.es.Designer.cs">
+      <DependentUpon>Resources.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="UI\AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DisplayMode.cs" />
+    <Compile Include="UI\EliteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\EliteForm.Designer.cs">
+      <DependentUpon>EliteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EliteGradientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\EliteGradientForm.Designer.cs">
+      <DependentUpon>EliteGradientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\NumericInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\NumericInputForm.Designer.cs">
+      <DependentUpon>NumericInputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PlayerSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PlayerSearchForm.Designer.cs">
+      <DependentUpon>PlayerSearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TextEntryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TextEntryForm.Designer.cs">
+      <DependentUpon>TextEntryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\GradientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\GradientForm.Designer.cs">
+      <DependentUpon>GradientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LoadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\LoadingForm.Designer.cs">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MagCardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MagCardForm.Designer.cs">
+      <DependentUpon>MagCardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MessageForm.Designer.cs">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\WaitForm.Designer.cs">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ManagedEliteModuleKey.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IDAutomation.NetAssembly.dll" />
+    <None Include="Resources\MagCardBackTouch.png" />
+    <None Include="Resources\MessageBackTouch.png" />
+    <None Include="Res\YellowButtonUp.png" />
+    <None Include="Res\YellowButtonDown.png" />
+    <None Include="Res\RedButtonUp.png" />
+    <None Include="Res\RedButtonDown.png" />
+    <None Include="Res\GreenButtonUp.png" />
+    <None Include="Res\GreenButtonDown.png" />
+    <None Include="Res\BingoCardQuickDraw.png" />
+    <None Include="Resources\BingoCardQuickDraw.png" />
+    <None Include="Resources\BingoCardQuickDraw.bmp" />
+    <None Include="Res\Star.png" />
+    <None Include="Res\BingoCardCBB.png" />
+    <None Include="Res\BingoCard80.png" />
+    <None Include="Res\BingoCard75.png" />
+    <None Include="Res\BingoCard90.png" />
+    <None Include="Res\WaitAnimation.gif" />
+    <None Include="Res\Elite.ico" />
+    <None Include="Res\LoadingScreen800.png" />
+    <None Include="Res\LoadingScreen1024.png" />
+    <None Include="Res\AboutBack.png" />
+    <None Include="Res\BigBlueButtonUp.png" />
+    <None Include="Res\BigBlueButtonDown.png" />
+    <None Include="Res\MagCardBack.png" />
+    <None Include="Res\SplashscreenBG.JPG" />
+    <None Include="Res\WaitBack.png" />
+    <None Include="Res\BlueButtonUp.png" />
+    <None Include="Res\BlueButtonDown.png" />
+    <None Include="Res\MessageBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.es.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\EliteForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EliteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\EliteGradientForm.resx">
+      <DependentUpon>EliteGradientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\NumericInputForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NumericInputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PlayerSearchForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PlayerSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TextEntryForm.resx">
+      <DependentUpon>TextEntryForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\LoadingForm.resx">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MagCardForm.es.resx">
+      <DependentUpon>MagCardForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MagCardForm.resx">
+      <DependentUpon>MagCardForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MessageForm.resx">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\WaitForm.resx">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Component Include="EliteMCPLib.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GTIControls\GTIControls.csproj">
+      <Project>{A2B9C7C4-AE7E-48DC-B39C-C9442CF017F6}</Project>
+      <Name>GTIControls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

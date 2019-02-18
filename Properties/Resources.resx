@@ -1,0 +1,872 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="AboutBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\AboutBack.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AboutBoxAbout" xml:space="preserve">
+    <value>About {0}</value>
+  </data>
+  <data name="BankAdjustReceiptTitleIssue" xml:space="preserve">
+    <value>Bank Issue Receipt</value>
+  </data>
+  <data name="BigBlueButtonDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\BigBlueButtonDown.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BigBlueButtonUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\BigBlueButtonUp.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BingoCardBonus" xml:space="preserve">
+    <value>BONUS {0:D2} {1:D2} {2:D2}</value>
+  </data>
+  <data name="BingoCardDAHeader" xml:space="preserve">
+    <value>  B     I     N     G     O  </value>
+  </data>
+  <data name="BingoCardDAHeaderLotto" xml:space="preserve">
+    <value>  L     O     T     T     O  </value>
+  </data>
+  <data name="BingoCardStandardHeader" xml:space="preserve">
+    <value>B  I  N  G  O </value>
+  </data>
+  <data name="BingoCardStandardHeaderLotto" xml:space="preserve">
+    <value>L  O  T  T  O </value>
+  </data>
+  <data name="BingoCardStar" xml:space="preserve">
+    <value>STAR {0:D2}</value>
+  </data>
+  <data name="BingoCardTooLong" xml:space="preserve">
+    <value>Bingo card face is too long!</value>
+  </data>
+  <data name="BlueButtonDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\BlueButtonDown.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BlueButtonUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\BlueButtonUp.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CardSearchError" xml:space="preserve">
+    <value>Number is required!</value>
+  </data>
+  <data name="Elite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Elite.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnterNumber" xml:space="preserve">
+    <value>Please enter a numeric value.</value>
+  </data>
+  <data name="GetMachineFailed" xml:space="preserve">
+    <value>Failed to retrieve the machine's information from the server.  Reason: {0}</value>
+  </data>
+  <data name="GetMachineListFailed" xml:space="preserve">
+    <value>Failed to retrieve the machine list from the server.  Reason: {0}</value>
+  </data>
+  <data name="GetPlayerFailed" xml:space="preserve">
+    <value>Failed to retrieve the player from the server.  Reason: {0}</value>
+  </data>
+  <data name="GetPlayerListFailed" xml:space="preserve">
+    <value>Failed to retrieve the player(s) from the server.  Reason: {0}</value>
+  </data>
+  <data name="GTIServerErrorBusy" xml:space="preserve">
+    <value>Server is busy</value>
+  </data>
+  <data name="GTIServerErrorCentralComm" xml:space="preserve">
+    <value>Error communicating with the Cental server</value>
+  </data>
+  <data name="GTIServerErrorCommitTrans" xml:space="preserve">
+    <value>Error committing tranaction</value>
+  </data>
+  <data name="GTIServerErrorConnect" xml:space="preserve">
+    <value>Error starting connection</value>
+  </data>
+  <data name="GTIServerErrorDbAccess" xml:space="preserve">
+    <value>Error accessing database</value>
+  </data>
+  <data name="GTIServerErrorDupTable" xml:space="preserve">
+    <value>Duplicate table entry</value>
+  </data>
+  <data name="GTIServerErrorGeneral" xml:space="preserve">
+    <value>General error</value>
+  </data>
+  <data name="GTIServerErrorMemAlloc" xml:space="preserve">
+    <value>Error allocating memory</value>
+  </data>
+  <data name="GTIServerErrorMissingTable" xml:space="preserve">
+    <value>Missing table entry</value>
+  </data>
+  <data name="GTIServerErrorMsgHandler" xml:space="preserve">
+    <value>No message handler found</value>
+  </data>
+  <data name="GTIServerErrorMulticast" xml:space="preserve">
+    <value>Error starting the multicast</value>
+  </data>
+  <data name="GTIServerErrorNoRequests" xml:space="preserve">
+    <value>No requests are pending</value>
+  </data>
+  <data name="GTIServerErrorNoRights" xml:space="preserve">
+    <value>Insufficient rights</value>
+  </data>
+  <data name="GTIServerErrorNoSProc" xml:space="preserve">
+    <value>Stored procedure not found</value>
+  </data>
+  <data name="GTIServerErrorParam" xml:space="preserve">
+    <value>Parameter error</value>
+  </data>
+  <data name="GTIServerErrorRequestPend" xml:space="preserve">
+    <value>Requests are pending</value>
+  </data>
+  <data name="GTIServerErrorRollbackTrans" xml:space="preserve">
+    <value>Error rolling back transaction</value>
+  </data>
+  <data name="GTIServerErrorSQL" xml:space="preserve">
+    <value>SQL error</value>
+  </data>
+  <data name="GTIServerErrorStartTrans" xml:space="preserve">
+    <value>Error starting transaction</value>
+  </data>
+  <data name="GTIServerErrorString" xml:space="preserve">
+    <value>String was too long</value>
+  </data>
+  <data name="GTIServerErrorSuccess" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="GTIServerErrorUnauth" xml:space="preserve">
+    <value>Unauthorized action</value>
+  </data>
+  <data name="GTIServerErrorUnknown" xml:space="preserve">
+    <value>Unknown error</value>
+  </data>
+  <data name="GTIServerErrorUpdateTable" xml:space="preserve">
+    <value>Error updating a table</value>
+  </data>
+  <data name="GTIServerErrorWriteFile" xml:space="preserve">
+    <value>Error writing to a file</value>
+  </data>
+  <data name="InvalidMessageResponse" xml:space="preserve">
+    <value>Invalid {0} response received from server.</value>
+  </data>
+  <data name="LoadingScreen1024" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\LoadingScreen1024.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LoadingScreen800" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\LoadingScreen800.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MachineNumber" xml:space="preserve">
+    <value>Machine Number</value>
+  </data>
+  <data name="MagCardBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\MagCardBack.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MCPNotActive" xml:space="preserve">
+    <value>Failed to initialize communication to EliteMCP.</value>
+  </data>
+  <data name="MessageBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\MessageBack.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MessageFormCancel" xml:space="preserve">
+    <value>&amp;Cancel</value>
+  </data>
+  <data name="MessageFormNo" xml:space="preserve">
+    <value>&amp;No</value>
+  </data>
+  <data name="MessageFormOk" xml:space="preserve">
+    <value>&amp;OK</value>
+  </data>
+  <data name="MessageFormYes" xml:space="preserve">
+    <value>&amp;Yes</value>
+  </data>
+  <data name="MessageName" xml:space="preserve">
+    <value>Message: {0}</value>
+  </data>
+  <data name="MessagePayloadWrongSize" xml:space="preserve">
+    <value>{0} message payload is the wrong size.</value>
+  </data>
+  <data name="NoDeviceTypes" xml:space="preserve">
+    <value>Failed to get device type data </value>
+  </data>
+  <data name="NoMachineSel" xml:space="preserve">
+    <value>No machine is selected.</value>
+  </data>
+  <data name="NoPlayerSel" xml:space="preserve">
+    <value>No player is selected.</value>
+  </data>
+  <data name="NotAClass" xml:space="preserve">
+    <value>obj is not a </value>
+  </data>
+  <data name="NoTextEntered" xml:space="preserve">
+    <value>No text was entered.</value>
+  </data>
+  <data name="PayoutReceiptDateWon" xml:space="preserve">
+    <value>Date Won:</value>
+  </data>
+  <data name="PayoutReceiptGame" xml:space="preserve">
+    <value>Game:</value>
+  </data>
+  <data name="PayoutReceiptGameType" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="PayoutReceiptNumWinners" xml:space="preserve">
+    <value>Winners:</value>
+  </data>
+  <data name="PayoutReceiptPaidOut" xml:space="preserve">
+    <value>Paid Out:</value>
+  </data>
+  <data name="PayoutReceiptPayStaff" xml:space="preserve">
+    <value>Paid By</value>
+  </data>
+  <data name="PayOutReceiptTitle" xml:space="preserve">
+    <value>Payout Receipt</value>
+  </data>
+  <data name="PayoutReceiptTotalPrize" xml:space="preserve">
+    <value>Total Prize:</value>
+  </data>
+  <data name="PayoutReceiptWinner" xml:space="preserve">
+    <value>Winner</value>
+  </data>
+  <data name="PlayerNoName" xml:space="preserve">
+    <value>[Player Id {0}]</value>
+  </data>
+  <data name="ReceiptAmount" xml:space="preserve">
+    <value>Amount:</value>
+  </data>
+  <data name="ReceiptBingoCardDisputeHeader" xml:space="preserve">
+    <value>{0}                                Page {1}/{2}</value>
+  </data>
+  <data name="ReceiptBingoCardHeader" xml:space="preserve">
+    <value>Receipt #: {0}          Gaming Date: {1}          Page {2}/{3}</value>
+  </data>
+  <data name="ReceiptCashOutBalance" xml:space="preserve">
+    <value>New Balance ({0}):</value>
+  </data>
+  <data name="ReceiptCashOutCashedOut" xml:space="preserve">
+    <value>Cashed Out ({0}):</value>
+  </data>
+  <data name="ReceiptCashOutOriginal" xml:space="preserve">
+    <value>Org. Balance ({0}):</value>
+  </data>
+  <data name="ReceiptGame" xml:space="preserve">
+    <value>Game {0}:</value>
+  </data>
+  <data name="ReceiptGamingDate" xml:space="preserve">
+    <value>Gaming Date:</value>
+  </data>
+  <data name="ReceiptMachineName" xml:space="preserve">
+    <value>Machine:</value>
+  </data>
+  <data name="ReceiptMalfunction1" xml:space="preserve">
+    <value>Malfunction Voids</value>
+  </data>
+  <data name="ReceiptMalfunction2" xml:space="preserve">
+    <value>All Pays and Plays</value>
+  </data>
+  <data name="ReceiptNumber" xml:space="preserve">
+    <value>Receipt #:</value>
+  </data>
+  <data name="ReceiptPackNumber" xml:space="preserve">
+    <value>Pack Number</value>
+  </data>
+  <data name="ReceiptPlayerName" xml:space="preserve">
+    <value>Player Name:</value>
+  </data>
+  <data name="ReceiptPlayerNumber" xml:space="preserve">
+    <value>Player #:</value>
+  </data>
+  <data name="ReceiptPlayerPoints" xml:space="preserve">
+    <value>Player Pts.:</value>
+  </data>
+  <data name="ReceiptPlayerPointsEarned" xml:space="preserve">
+    <value>Pts. Earned:</value>
+  </data>
+  <data name="ReceiptPlayerPointsUsed" xml:space="preserve">
+    <value>Pts. Redeemed:</value>
+  </data>
+  <data name="ReceiptPlayerPointsRedeem" xml:space="preserve">
+    <value>Pts. Redeemed:</value>
+  </data>
+  <data name="ReceiptPlayerPointTotal" xml:space="preserve">
+    <value>New Balance:</value>
+  </data>
+  <data name="ReceiptReprint" xml:space="preserve">
+    <value>** Reprint **</value>
+  </data>
+  <data name="ReceiptSalesCards" xml:space="preserve">
+    <value>Cards</value>
+  </data>
+  <data name="ReceiptSalesChange" xml:space="preserve">
+    <value>Change:</value>
+  </data>
+  <data name="ReceiptSalesDeviceFee" xml:space="preserve">
+    <value>Device Fee:</value>
+  </data>
+  <data name="ReceiptSalesGameCardsHeader" xml:space="preserve">
+    <value>Card Info Per Game</value>
+  </data>
+  <data name="ReceiptSalesGameTotalCards" xml:space="preserve">
+    <value>Game{0}:{1} </value>
+  </data>
+  <data name="ReceiptSalesItemHeader1" xml:space="preserve">
+    <value>Sess  Qty            Points        Total</value>
+  </data>
+  <data name="ReceiptSalesSessionTotalCards" xml:space="preserve">
+    <value>Total Cards:</value>
+  </data>
+  <data name="ReceiptSalesSmallItemHeader1" xml:space="preserve">
+    <value>Sess  Qty    Points        Total</value>
+  </data>
+  <data name="ReceiptSalesTaxes" xml:space="preserve">
+    <value>Taxes:</value>
+  </data>
+  <data name="ReceiptSalesTendered" xml:space="preserve">
+    <value>Amount Tendered:</value>
+  </data>
+  <data name="ReceiptSalesTotal" xml:space="preserve">
+    <value>Sale Total({0}):</value>
+  </data>
+  <data name="ReceiptSubtotal" xml:space="preserve">
+    <value>Subtotal:</value>
+  </data>
+  <data name="ReceiptSerialNumber" xml:space="preserve">
+    <value>Serial #:</value>
+  </data>
+  <data name="ReceiptSession" xml:space="preserve">
+    <value>Session {0}</value>
+  </data>
+  <data name="ReceiptSoldFrom" xml:space="preserve">
+    <value>Station:</value>
+  </data>
+  <data name="ReceiptStaff" xml:space="preserve">
+    <value>Cashier:</value>
+  </data>
+  <data name="ReceiptUnitNumber" xml:space="preserve">
+    <value>Unit #:</value>
+  </data>
+  <data name="SearchByNumber" xml:space="preserve">
+    <value>Search By Number:</value>
+  </data>
+  <data name="SearchMachines" xml:space="preserve">
+    <value>Search Machines</value>
+  </data>
+  <data name="SelectMachine" xml:space="preserve">
+    <value>Select &amp;Machine</value>
+  </data>
+  <data name="ServerCommFailed" xml:space="preserve">
+    <value>Server communication lost.</value>
+  </data>
+  <data name="ServerErrorCode" xml:space="preserve">
+    <value>Server returned error: {0} ({1}).</value>
+  </data>
+  <data name="SplashscreenBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\SplashscreenBG.JPG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UnitTransferReceiptOrigNum" xml:space="preserve">
+    <value>Orig. Receipt #:</value>
+  </data>
+  <data name="UnitTransferReceiptTitle" xml:space="preserve">
+    <value>Unit Transfer Receipt</value>
+  </data>
+  <data name="UnitTransferReceiptTransfer" xml:space="preserve">
+    <value>Transferred To</value>
+  </data>
+  <data name="UnknownBingoCard" xml:space="preserve">
+    <value>Unknown bingo game/card combination.</value>
+  </data>
+  <data name="UnknownCardLevel" xml:space="preserve">
+    <value>Unknown card level id received from server.</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version {0}</value>
+  </data>
+  <data name="VoidReceiptDate" xml:space="preserve">
+    <value>Voided On:</value>
+  </data>
+  <data name="VoidReceiptDevice" xml:space="preserve">
+    <value>Device:</value>
+  </data>
+  <data name="VoidReceiptNumber" xml:space="preserve">
+    <value>Void #:</value>
+  </data>
+  <data name="VoidReceiptPtsRemoved" xml:space="preserve">
+    <value>Pts. Removed:</value>
+  </data>
+  <data name="VoidReceiptPtsReturned" xml:space="preserve">
+    <value>Pts. Returned:</value>
+  </data>
+  <data name="VoidReceiptPtsTotal" xml:space="preserve">
+    <value>Total:</value>
+  </data>
+  <data name="VoidReceiptStaff" xml:space="preserve">
+    <value>Voided By:</value>
+  </data>
+  <data name="VoidReceiptTitle" xml:space="preserve">
+    <value>Register Void Receipt</value>
+  </data>
+  <data name="VoidReceiptTotal" xml:space="preserve">
+    <value>Receipt Total:</value>
+  </data>
+  <data name="WaitAnimation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\WaitAnimation.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WaitBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\WaitBack.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WaitFormFindingMachines" xml:space="preserve">
+    <value>Searching for machines, please wait.</value>
+  </data>
+  <data name="WaitFormFindingPlayers" xml:space="preserve">
+    <value>Searching for players, please wait.</value>
+  </data>
+  <data name="WaitFormGettingMachine" xml:space="preserve">
+    <value>Getting machine data, please wait.</value>
+  </data>
+  <data name="WaitFormGettingPlayer" xml:space="preserve">
+    <value>Getting player data, please wait.</value>
+  </data>
+  <data name="DeviceCaller" xml:space="preserve">
+    <value>Caller</value>
+  </data>
+  <data name="DeviceCrateServer" xml:space="preserve">
+    <value>Crate Server</value>
+  </data>
+  <data name="DeviceFixedUnit" xml:space="preserve">
+    <value>Fixed</value>
+  </data>
+  <data name="DeviceKiosk" xml:space="preserve">
+    <value>Kiosk</value>
+  </data>
+  <data name="DeviceManagement" xml:space="preserve">
+    <value>Management</value>
+  </data>
+  <data name="DeviceExplorer" xml:space="preserve">
+    <value>Explorer2</value>
+  </data>
+  <data name="DevicePOS" xml:space="preserve">
+    <value>POS</value>
+  </data>
+  <data name="DevicePOSManagement" xml:space="preserve">
+    <value>POS / Management</value>
+  </data>
+  <data name="DevicePOSPortable" xml:space="preserve">
+    <value>POS (Portable)</value>
+  </data>
+  <data name="DeviceRemoteDisplay" xml:space="preserve">
+    <value>Remote Display</value>
+  </data>
+  <data name="DeviceTracker" xml:space="preserve">
+    <value>Tracker</value>
+  </data>
+  <data name="DeviceTraveler" xml:space="preserve">
+    <value>Traveler</value>
+  </data>
+  <data name="DeviceTraveler2" xml:space="preserve">
+    <value>Traveler II</value>
+  </data>
+  <data name="DeviceUserDefined" xml:space="preserve">
+    <value>User Defined</value>
+  </data>
+  <data name="CreditCashOutReceiptTitle" xml:space="preserve">
+    <value>Credit Cash Out Receipt</value>
+  </data>
+  <data name="ReceiptSalesItemHeader2" xml:space="preserve">
+    <value>Item               Redeemed</value>
+  </data>
+  <data name="ReceiptSalesSmallItemHeader2" xml:space="preserve">
+    <value>Item       Redeemed</value>
+  </data>
+  <data name="SaleReceiptTitle" xml:space="preserve">
+    <value>Register Sale Receipt</value>
+  </data>
+  <data name="DeviceUKSocketServer" xml:space="preserve">
+    <value>UK Socket Server</value>
+  </data>
+  <data name="BingoCard75" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\BingoCard75.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BingoCard80" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\BingoCard80.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BingoCard90" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\BingoCard90.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FreeSpace" xml:space="preserve">
+    <value>Free</value>
+  </data>
+  <data name="BingoCardCBB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\BingoCardCBB.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Star" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Star.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ReceiptCBBTitle" xml:space="preserve">
+    <value>Crystal Ball Cards</value>
+  </data>
+  <data name="ReturnReceiptTitle" xml:space="preserve">
+    <value>Register Return Receipt</value>
+  </data>
+  <data name="GTIServerErrorCardSalesUnavailable" xml:space="preserve">
+    <value>Card sales unavailable</value>
+  </data>
+  <data name="BankAdjustReceiptTitleClose" xml:space="preserve">
+    <value>Bank Close Receipt</value>
+  </data>
+  <data name="BankAdjustReceiptTitleDrop" xml:space="preserve">
+    <value>Bank Drop Receipt</value>
+  </data>
+  <data name="ReceiptIssuedBy" xml:space="preserve">
+    <value>Issued By:</value>
+  </data>
+  <data name="ReceiptIssuedTo" xml:space="preserve">
+    <value>Issued To:</value>
+  </data>
+  <data name="SessionTitle" xml:space="preserve">
+    <value>Session:</value>
+  </data>
+  <data name="ReceiptIssuedOn" xml:space="preserve">
+    <value>Issued On:</value>
+  </data>
+  <data name="ReceiptSalesExchangeRate" xml:space="preserve">
+    <value>Exchange Rate:</value>
+  </data>
+  <data name="ReceiptSalesGrandTotal" xml:space="preserve">
+    <value>Grand Total ({0}):</value>
+  </data>
+  <data name="ReceiptCashOutExchangeRate" xml:space="preserve">
+    <value>Exchange Rate:</value>
+  </data>
+  <data name="SlingoCardHeader" xml:space="preserve">
+    <value>  S L I N G O </value>
+  </data>
+  <data name="BankAdjustReceiptCurrency" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="TenderTypeCash" xml:space="preserve">
+    <value>Cash</value>
+  </data>
+  <data name="GTIServerErrorInsufficientInventory" xml:space="preserve">
+    <value>There is insufficient inventory</value>
+  </data>
+  <data name="ReceiptClientId" xml:space="preserve">
+    <value>Client Id:</value>
+  </data>
+  <data name="GTIServerErrorInUse" xml:space="preserve">
+    <value>The current item is in use</value>
+  </data>
+  <data name="ReceiptSalesItemHeaderNoPts1" xml:space="preserve">
+    <value>Sess  Qty Item                     Total</value>
+  </data>
+  <data name="ReceiptSalesSmallItemHeaderNoPts1" xml:space="preserve">
+    <value>Sess  Qty Item             Total</value>
+  </data>
+  <data name="CBBElecCard" xml:space="preserve">
+    <value> E:</value>
+  </data>
+  <data name="CBBPaperCard" xml:space="preserve">
+    <value> P:</value>
+  </data>
+  <data name="ReceiptSalesSessionElecCards" xml:space="preserve">
+    <value>Elec. Cards:</value>
+  </data>
+  <data name="ReceiptSalesSessionPaperCards" xml:space="preserve">
+    <value>Paper Cards:</value>
+  </data>
+  <data name="ReceiptTransactionDate" xml:space="preserve">
+    <value>Transaction Date:</value>
+  </data>
+  <data name="ReceiptChaityTitle" xml:space="preserve">
+    <value>Charity Information</value>
+  </data>
+  <data name="ReceiptCharityLicense" xml:space="preserve">
+    <value>License #:</value>
+  </data>
+  <data name="ReceiptCharityName" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="ReceiptCharityTaxId" xml:space="preserve">
+    <value>Tax Id:</value>
+  </data>
+  <data name="DeviceTablet" xml:space="preserve">
+    <value>Ted-E</value>
+  </data>
+  <data name="SQLConnection" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ReceiptPaperPacksSold" xml:space="preserve">
+    <value>Paper Packs Sold</value>
+  </data>
+  <data name="B3SaleReceiptTitle" xml:space="preserve">
+    <value>B3 Sales Receipt</value>
+  </data>
+  <data name="AccountNumberString" xml:space="preserve">
+    <value>Account #:</value>
+  </data>
+  <data name="B3JackpotReceiptTitle" xml:space="preserve">
+    <value>B3 Jackpot Receipt</value>
+  </data>
+  <data name="B3RedeemReceiptTitle" xml:space="preserve">
+    <value>B3 Redeem Receipt</value>
+  </data>
+  <data name="B3UnlockReceiptTitle" xml:space="preserve">
+    <value>B3 Unlock Receipt</value>
+  </data>
+  <data name="MessageFormAbort" xml:space="preserve">
+    <value>&amp;Abort</value>
+  </data>
+  <data name="MessageFormRetry" xml:space="preserve">
+    <value>&amp;Retry</value>
+  </data>
+  <data name="MessageFormForce" xml:space="preserve">
+    <value>&amp;Force</value>
+  </data>
+  <data name="MessageFormIgnore" xml:space="preserve">
+    <value>&amp;Ignore</value>
+  </data>
+  <data name="ReceiptPointQualifyingAmt" xml:space="preserve">
+    <value>Pt Qual. Amt:</value>
+  </data>
+  <data name="ReceiptPointsFromQualifyingAmt" xml:space="preserve">
+    <value>Pts From Qual.:</value>
+  </data>
+  <data name="DeviceVLTBingoKiosk" xml:space="preserve">
+    <value>VLT Bingo Kiosk</value>
+  </data>
+  <data name="ReceiptCoupons" xml:space="preserve">
+    <value>Coupons:</value>
+  </data>
+  <data name="IncompleteTransactionTitle" xml:space="preserve">
+    <value>**INCOMPLETE**
+**TRANSACTION**</value>
+  </data>
+  <data name="ReceiptContinuationGame" xml:space="preserve">
+    <value>Game {0}-{1}:</value>
+  </data>
+  <data name="IncompleteTransactionTitle1" xml:space="preserve">
+    <value>**INCOMPLETE**</value>
+  </data>
+  <data name="IncompleteTransactionTitle2" xml:space="preserve">
+    <value>**TRANSACTION**</value>
+  </data>
+  <data name="ReceiptElectronicValidated" xml:space="preserve">
+    <value>ELECTRONIC VALIDATED</value>
+  </data>
+  <data name="ReceiptPaperValidated" xml:space="preserve">
+    <value>PAPER VALIDATED</value>
+  </data>
+  <data name="BingoCardQuickDraw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\BingoCardQuickDraw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BingoCardQuickDrawHeader" xml:space="preserve">
+    <value>QuickDraw</value>
+  </data>
+  <data name="AuthCode" xml:space="preserve">
+    <value>Auth Code:</value>
+  </data>
+  <data name="MessageFormContinue" xml:space="preserve">
+    <value>C&amp;ontinue</value>
+  </data>
+  <data name="GreenButtonDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\GreenButtonDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GreenButtonUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\GreenButtonUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RedButtonDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\RedButtonDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RedButtonUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\RedButtonUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="YellowButtonDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\YellowButtonDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="YellowButtonUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\YellowButtonUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MagCardBackTouch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MagCardBackTouch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MessageBackTouch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MessageBackTouch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="B3OutOfSessioNRedeemReceiptTitle" xml:space="preserve">
+    <value>Out of session redemption voucher</value>
+  </data>
+  <data name="DeviceAdvancedPOSKiosk" xml:space="preserve">
+    <value>POS Kiosk (Advanced)</value>
+  </data>
+  <data name="DeviceBuyAgainKiosk" xml:space="preserve">
+    <value>POS Kiosk (Buy Again)</value>
+  </data>
+  <data name="DeviceHybridKiosk" xml:space="preserve">
+    <value>POS Kiosk (Hybrid)</value>
+  </data>
+  <data name="DeviceSimplePOSKiosk" xml:space="preserve">
+    <value>POS Kiosk (Simple)</value>
+  </data>
+  <data name="ReceiptPlayerIdentity" xml:space="preserve">
+    <value>Account #:</value>
+  </data>
+  <data name="ReceiptPrepaidAmount" xml:space="preserve">
+    <value>Prepaid:</value>
+  </data>
+  <data name="PresaleReceiptTitle" xml:space="preserve">
+    <value>Register Presale Receipt</value>
+  </data>
+  <data name="DeviceB3Kiosk" xml:space="preserve">
+    <value>POS Kiosk (B3)</value>
+  </data>
+  <data name="Machine" xml:space="preserve">
+    <value>{0} {1}</value>
+  </data>
+  <data name="MachineId" xml:space="preserve">
+    <value>MID {0}</value>
+  </data>
+  <data name="DisabledText" xml:space="preserve">
+    <value>(Disabled)</value>
+  </data>
+  <data name="ReceiptRedeemed" xml:space="preserve">
+    <value>Redeemed:</value>
+  </data>
+  <data name="ReceiptSmallPlayerPointsRedeem" xml:space="preserve">
+    <value>Pts Rdm:</value>
+  </data>
+  <data name="ReceiptSmallSalesDeviceFee" xml:space="preserve">
+    <value>Dev Fee:</value>
+  </data>
+  <data name="ReceiptSmallSalesExchangeRate" xml:space="preserve">
+    <value>XRT:</value>
+  </data>
+  <data name="ReceiptSmallSalesTendered" xml:space="preserve">
+    <value>Amt Tnd:</value>
+  </data>
+  <data name="ReceiptSmallSalesTotal" xml:space="preserve">
+    <value>Ttl {0}:</value>
+  </data>
+  <data name="ReceiptSmallSubtotal" xml:space="preserve">
+    <value>Subttl:</value>
+  </data>
+  <data name="RefundReceiptTitle" xml:space="preserve">
+    <value>Register Refund Receipt</value>
+  </data>
+  <data name="RefundReceiptNumber" xml:space="preserve">
+    <value>Refund #:</value>
+  </data>
+  <data name="RefundReceiptStaff" xml:space="preserve">
+    <value>Refund By:</value>
+  </data>
+  <data name="RefundReceiptDate" xml:space="preserve">
+    <value>Refund On:</value>
+  </data>
+</root>
