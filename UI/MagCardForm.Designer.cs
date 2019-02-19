@@ -50,6 +50,8 @@ namespace GTI.Modules.Shared
             this.m_clearCardButton.ImageNormal = global::GTI.Modules.Shared.Properties.Resources.BigBlueButtonUp;
             this.m_clearCardButton.ImagePressed = global::GTI.Modules.Shared.Properties.Resources.BigBlueButtonDown;
             this.m_clearCardButton.Name = "m_clearCardButton";
+			this.m_clearCardButton.RepeatRate = 150;
+            this.m_clearCardButton.RepeatWhenHeldFor = 750;
             this.m_clearCardButton.SecondaryTextPadding = new System.Windows.Forms.Padding(5);
             this.m_clearCardButton.ShowFocus = false;
             this.m_clearCardButton.TabStop = false;
@@ -64,6 +66,8 @@ namespace GTI.Modules.Shared
             this.m_cancelButton.ImageNormal = global::GTI.Modules.Shared.Properties.Resources.BigBlueButtonUp;
             this.m_cancelButton.ImagePressed = global::GTI.Modules.Shared.Properties.Resources.BigBlueButtonDown;
             this.m_cancelButton.Name = "m_cancelButton";
+            this.m_cancelButton.RepeatRate = 150;
+            this.m_cancelButton.RepeatWhenHeldFor = 750;			
             this.m_cancelButton.SecondaryTextPadding = new System.Windows.Forms.Padding(5);
             this.m_cancelButton.ShowFocus = false;
             this.m_cancelButton.TabStop = false;
@@ -96,6 +100,8 @@ namespace GTI.Modules.Shared
             this.m_btnNoThanks.ImagePressed = global::GTI.Modules.Shared.Properties.Resources.RedButtonDown;
             resources.ApplyResources(this.m_btnNoThanks, "m_btnNoThanks");
             this.m_btnNoThanks.Name = "m_btnNoThanks";
+            this.m_btnNoThanks.RepeatRate = 150;
+            this.m_btnNoThanks.RepeatWhenHeldFor = 750;
             this.m_btnNoThanks.SecondaryTextPadding = new System.Windows.Forms.Padding(5);
             this.m_btnNoThanks.ShowFocus = false;
             this.m_btnNoThanks.UseVisualStyleBackColor = false;
@@ -161,8 +167,6 @@ namespace GTI.Modules.Shared
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MagCardForm_KeyDown);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnKeyPress);
             this.ResumeLayout(false);
-            this.PerformLayout();
-
         }
 
         #endregion
