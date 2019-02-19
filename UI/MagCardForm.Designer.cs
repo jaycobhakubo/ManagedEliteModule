@@ -73,7 +73,6 @@ namespace GTI.Modules.Shared
             // m_messageLabel
             // 
             this.m_messageLabel.BackColor = System.Drawing.Color.Transparent;
-            this.m_messageLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.m_messageLabel, "m_messageLabel");
             this.m_messageLabel.Name = "m_messageLabel";
             // 

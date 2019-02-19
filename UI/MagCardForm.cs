@@ -199,6 +199,11 @@ namespace GTI.Modules.Shared
 
             //Use clear button as ok button
             m_clearCardButton.Text = "Ok";
+            //removed the current event
+            m_clearCardButton.Click -= new EventHandler(ClearCardClick);
+            //add the new current event
+            m_clearCardButton.Click += new EventHandler(FindPlayerOkClick);
+            
             m_txtbxCardNumber.TabIndex = 0;
             m_txtbxCardNumber.Focus();
         }
@@ -360,6 +365,14 @@ namespace GTI.Modules.Shared
             if (!m_readWholeCard)
                 m_magCardReader.Reset();
 
+            DialogResult = DialogResult.OK;
+            Close();
+        }
+
+        private void FindPlayerOkClick(object sender, EventArgs e)
+        {
+            m_cardData.Append(m_txtbxCardNumber.Text);
+            // What is this code do? = m_MatchedFilter = e.MatchFilter;
             DialogResult = DialogResult.OK;
             Close();
         }
