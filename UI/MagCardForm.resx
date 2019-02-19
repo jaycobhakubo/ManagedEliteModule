@@ -187,16 +187,16 @@
     <value>Tahoma, 15.75pt, style=Bold</value>
   </data>
   <data name="m_messageLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 19</value>
+    <value>12, 76</value>
   </data>
   <data name="m_messageLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>286, 80</value>
+    <value>296, 23</value>
   </data>
   <data name="m_messageLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="m_messageLabel.Text" xml:space="preserve">
-    <value>Please swipe or enter your player card.</value>
+    <value>Please swipe the card.</value>
   </data>
   <data name="m_messageLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>

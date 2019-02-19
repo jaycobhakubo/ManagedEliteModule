@@ -194,8 +194,10 @@ namespace GTI.Modules.Shared
             m_cancelButton.Location = new Point(172, 170);
             m_clearCardButton.Location = new Point(13, 170);
             m_messageLabel.Location = new Point(14, 16);
+            m_messageLabel.Size = new System.Drawing.Size(286, 80);
+            m_messageLabel.Text = "Please swipe or enter your player card.";
             m_txtbxCardNumber.Visible = true;
-            
+           
 
             //Use clear button as ok button
             m_clearCardButton.Text = "Ok";
