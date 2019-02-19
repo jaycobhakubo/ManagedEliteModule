@@ -373,28 +373,31 @@ cards to analyze have been swiped.</value>
   <metadata name="m_kioskTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="textBoxNumeric1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="m_txtbxCardNumber.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 117</value>
   </data>
-  <data name="textBoxNumeric1.MaxLength" type="System.Int32, mscorlib">
+  <data name="m_txtbxCardNumber.MaxLength" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="textBoxNumeric1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="m_txtbxCardNumber.Size" type="System.Drawing.Size, System.Drawing">
     <value>290, 27</value>
   </data>
-  <data name="textBoxNumeric1.TabIndex" type="System.Int32, mscorlib">
+  <data name="m_txtbxCardNumber.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="&gt;&gt;textBoxNumeric1.Name" xml:space="preserve">
-    <value>textBoxNumeric1</value>
+  <data name="m_txtbxCardNumber.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="&gt;&gt;textBoxNumeric1.Type" xml:space="preserve">
+  <data name="&gt;&gt;m_txtbxCardNumber.Name" xml:space="preserve">
+    <value>m_txtbxCardNumber</value>
+  </data>
+  <data name="&gt;&gt;m_txtbxCardNumber.Type" xml:space="preserve">
     <value>GTI.Controls.TextBoxNumeric, GTIControls, Version=1.3.11.1324, Culture=neutral, PublicKeyToken=8379638106a1f521</value>
   </data>
-  <data name="&gt;&gt;textBoxNumeric1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;m_txtbxCardNumber.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;textBoxNumeric1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;m_txtbxCardNumber.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

@@ -39,7 +39,7 @@ namespace GTI.Modules.Shared
             this.m_lblPatronMessage = new System.Windows.Forms.Label();
             this.m_timeoutProgress = new System.Windows.Forms.ProgressBar();
             this.m_kioskTimer = new System.Windows.Forms.Timer(this.components);
-            this.textBoxNumeric1 = new GTI.Controls.TextBoxNumeric();
+            this.m_txtbxCardNumber = new GTI.Controls.TextBoxNumeric();
             this.SuspendLayout();
             // 
             // m_clearCardButton
@@ -124,12 +124,12 @@ namespace GTI.Modules.Shared
             this.m_kioskTimer.Interval = 500;
             this.m_kioskTimer.Tick += new System.EventHandler(this.m_kioskTimer_Tick);
             // 
-            // textBoxNumeric1
+            // m_txtbxCardNumber
             // 
-            resources.ApplyResources(this.textBoxNumeric1, "textBoxNumeric1");
-            this.textBoxNumeric1.Mask = GTI.Controls.TextBoxNumeric.TextBoxType.Integer;
-            this.textBoxNumeric1.Name = "textBoxNumeric1";
-            this.textBoxNumeric1.Precision = 2;
+            resources.ApplyResources(this.m_txtbxCardNumber, "m_txtbxCardNumber");
+            this.m_txtbxCardNumber.Mask = GTI.Controls.TextBoxNumeric.TextBoxType.Integer;
+            this.m_txtbxCardNumber.Name = "m_txtbxCardNumber";
+            this.m_txtbxCardNumber.Precision = 2;
             // 
             // MagCardForm
             // 
@@ -137,7 +137,7 @@ namespace GTI.Modules.Shared
             this.BackgroundImage = global::GTI.Modules.Shared.Properties.Resources.MagCardBack;
             resources.ApplyResources(this, "$this");
             this.ControlBox = false;
-            this.Controls.Add(this.textBoxNumeric1);
+            this.Controls.Add(this.m_txtbxCardNumber);
             this.Controls.Add(this.m_timeoutProgress);
             this.Controls.Add(this.m_lblPatronMessage);
             this.Controls.Add(this.m_btnNoThanks);
@@ -177,6 +177,6 @@ namespace GTI.Modules.Shared
         private System.Windows.Forms.Label m_lblPatronMessage;
         private System.Windows.Forms.ProgressBar m_timeoutProgress;
         private System.Windows.Forms.Timer m_kioskTimer;
-        private Controls.TextBoxNumeric textBoxNumeric1;
+        private Controls.TextBoxNumeric m_txtbxCardNumber;
     }
 }

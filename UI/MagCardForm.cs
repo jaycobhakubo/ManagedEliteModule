@@ -167,14 +167,11 @@ namespace GTI.Modules.Shared
                 BackgroundImage = null;
                 DrawAsGradient = true;
                 Size = WinSize;
-                //protected readonly Point WinMessageLoc = new Point(8, 75);
-                //m_messageLabel.Location = WinMessageLoc;
-                m_messageLabel.Location = new Point(14, 16);
+
+                m_messageLabel.Location = WinMessageLoc;           
                 //m_messageLabel.Font = WinMessageFont;
 
-                //protected readonly Point WinButton1Loc = new Point(13, 159);
-                //m_clearCardButton.Location = WinButton1Loc;
-                m_clearCardButton.Location = new Point(13, 170);
+                m_clearCardButton.Location = WinButton1Loc;             
                 m_clearCardButton.Size = WinButtonSize;
                 m_clearCardButton.Font = WinButtonFont;
                 m_clearCardButton.ImageNormal = Resources.BlueButtonUp;
@@ -182,9 +179,7 @@ namespace GTI.Modules.Shared
                 m_clearCardButton.ShowFocus = true;
                 m_clearCardButton.TabStop = true;
 
-                //m_cancelButton.Location = WinButton2Loc;
-                //Point WinButton2Loc = new Point(172, 159);
-                m_cancelButton.Location = new Point(172, 170);
+                m_cancelButton.Location = WinButton2Loc;                   
                 m_cancelButton.Size = WinButtonSize;
                 m_cancelButton.Font = WinButtonFont;
                 m_cancelButton.ImageNormal = Resources.BlueButtonUp;
@@ -193,6 +188,21 @@ namespace GTI.Modules.Shared
                 m_cancelButton.TabStop = true;
             }
         }
+
+        public void RedesignUI()
+        {
+            m_cancelButton.Location = new Point(172, 170);
+            m_clearCardButton.Location = new Point(13, 170);
+            m_messageLabel.Location = new Point(14, 16);
+            m_txtbxCardNumber.Visible = true;
+            
+
+            //Use clear button as ok button
+            m_clearCardButton.Text = "Ok";
+            m_txtbxCardNumber.TabIndex = 0;
+            m_txtbxCardNumber.Focus();
+        }
+
 
         /// <summary>
         /// Processes a dialog box key.
