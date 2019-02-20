@@ -149,6 +149,7 @@
     <Compile Include="Data\CommonValues.cs" />
     <Compile Include="Data\FinalizeCardPositionMapMessage.cs" />
     <Compile Include="Data\GetProgramDataMessage.cs" />
+    <Compile Include="Data\GetPromoTextMessage.cs" />
     <Compile Include="Data\RemoveCardPositionsMapMessage.cs" />
     <Compile Include="Data\SetCardPositionMapSequenceMessage.cs" />
     <Compile Include="Data\SetCardPositionMapInfoMessage.cs" />
@@ -247,6 +248,7 @@
     <Compile Include="Data\SetOperatorDeviceFeesMessage.cs" />
     <Compile Include="Data\SetPlayerMagCardPINMessage.cs" />
     <Compile Include="Data\SetPackageItemMessage.cs" />
+    <Compile Include="Data\SetPromoTextMessage.cs" />
     <Compile Include="Data\SetReceiptTenderMessage.cs" />
     <Compile Include="Data\SetSystemSettingsMessage.cs" />
     <Compile Include="Data\SetTenderTypesStatusMessage.cs" />

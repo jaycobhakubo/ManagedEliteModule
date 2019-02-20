@@ -773,6 +773,7 @@ namespace GTI.Modules.Shared
         protected List<SessionCharity> m_charities = new List<SessionCharity>();
         protected List<string> m_paperPackInfoItems = new List<string>();
         protected SaleTender[] m_saleTenders;
+        protected List<string> m_afterReceiptText = new List<string>();
         #endregion
 
         #region Member Methods
@@ -1944,6 +1945,67 @@ namespace GTI.Modules.Shared
             m_printer.AddLine(DateTime.Now.ToString(), StringAlignment.Center, m_fontMedium);
         }
 
+        protected virtual void PrintAfterReceiptText()
+        {
+            if (AfterReceiptText.Count == 0)
+                return;
+
+            m_printer.ClearLines();
+
+            Font ourFont = m_fontMedium;
+            string longestText = "";
+            float widest = 0;
+
+            //fit the text
+            foreach (string text in AfterReceiptText)
+            {
+                if (!((text.Length == 3 && text.ToUpper() == "CUT") || (text.Length > 8 && text.ToUpper().Substring(0, 8) == "CODE128="))) //not a barcode or cut code
+                {
+                    float w = m_printer.MeasureString(text, ourFont, StringAlignment.Center).Width;
+
+                    if (w > widest)
+                    {
+                        widest = w;
+                        longestText = text;
+                    }
+                }
+            }
+
+            if (widest > m_printer.PrintableArea.Width)
+            {
+                float size = ourFont.Size - 1;
+                
+                ourFont = new Font(ourFont.FontFamily, size, FontStyle.Regular);
+
+                while (m_printer.MeasureString(longestText, ourFont, StringAlignment.Center).Width > m_printer.PrintableArea.Width && size > 2)
+                {
+                    size--;
+                    ourFont = new Font(ourFont.FontFamily, size, FontStyle.Regular);
+                }
+            }
+
+            foreach (string text in AfterReceiptText)
+            {
+                if (text.Length == 3 && text.ToUpper() == "CUT") //cut
+                {
+                    m_printer.AddLine(DateTime.Now.ToString(), StringAlignment.Center, m_fontMedium);
+                    m_printer.Print();
+                    m_printer.ClearLines();
+                }
+                else if (text.Length > 8 && text.ToUpper().Substring(0, 8) == "CODE128=") //print a barcode
+                {
+                    PrintBarcode(text.Substring(8));
+                }
+                else
+                {
+                    m_printer.AddLine(text, StringAlignment.Center, ourFont);
+                }
+            }
+
+            m_printer.AddLine(DateTime.Now.ToString(), StringAlignment.Center, m_fontMedium);
+            m_printer.Print();
+        }
+
         /// <summary>
         /// Prints the operators footer.
         /// </summary>
@@ -2041,6 +2103,30 @@ namespace GTI.Modules.Shared
                 m_printer.AddLine(IncompleteTransactionLine2, StringAlignment.Center, m_fontExtraHuge);
             }
         }
+
+        protected void PrintBarcode(string toPrint)
+        {
+            FontEncoder fontEncoder = new FontEncoder();
+            var encodedText = fontEncoder.Code128(toPrint);
+            float size = 24f;
+            Font ourFont = new Font(BarcodeHelper.XSmallFontName, size, FontStyle.Regular);
+
+            while(m_printer.MeasureString(toPrint, ourFont, StringAlignment.Center).Width * 1.10f > m_printer.PrintableArea.Width && size > 3)
+            {
+                size--;
+                ourFont = new Font(BarcodeHelper.XSmallFontName, size, FontStyle.Regular);
+            }
+
+            if (m_printer.MeasureString(toPrint, ourFont, StringAlignment.Center).Width * 1.10f <= m_printer.PrintableArea.Width)
+            {
+                m_printer.AddLine(" ", StringAlignment.Center, m_fontMedium);
+                m_printer.AddLine(" ", StringAlignment.Center, m_fontMedium);
+                m_printer.AddLine(encodedText, StringAlignment.Center, ourFont);
+                m_printer.AddLine(" ", StringAlignment.Center, m_fontMedium);
+                m_printer.AddLine(" ", StringAlignment.Center, m_fontMedium);
+            }
+        }
+        
         // US2139
         /// <summary>
         /// Prepares the receipt to be previewed for the specified printer.
@@ -2137,6 +2223,8 @@ namespace GTI.Modules.Shared
             {
                 m_printer.Print();
             }
+
+            PrintAfterReceiptText();
         }
         // END: US2139
         #endregion
@@ -2987,6 +3075,19 @@ namespace GTI.Modules.Shared
             set
             {
                 m_charities = value;
+            }
+        }
+
+        public List<string> AfterReceiptText
+        {
+            get
+            {
+                return m_afterReceiptText;
+            }
+
+            set
+            {
+                m_afterReceiptText = value;
             }
         }
 

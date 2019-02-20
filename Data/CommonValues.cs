@@ -729,6 +729,9 @@ namespace GTI.Modules.Shared
 
         DeferExportsOfPlayerPointsFromSales = 449,
 
+        EnablePromoTextAfterReceiptAtPOS = 451,
+        PromoTextAfterReceiptAtPOSRequiresPlayer = 452,
+
     }   // (note: C# doesn't complain about the extra comma on the last item, so you don't have to change that line when adding a new item )
 
     /// <summary>
