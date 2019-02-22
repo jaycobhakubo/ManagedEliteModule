@@ -276,12 +276,6 @@
     <Compile Include="UI\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\MagCardForm2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\MagCardForm2.Designer.cs">
-      <DependentUpon>MagCardForm2.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\DisplayMode.cs" />
     <Compile Include="UI\EliteForm.cs">
       <SubType>Form</SubType>
@@ -398,14 +392,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\MagCardForm2.es.resx">
-      <DependentUpon>MagCardForm2.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\MagCardForm2.resx">
-      <DependentUpon>MagCardForm2.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\EliteForm.resx">

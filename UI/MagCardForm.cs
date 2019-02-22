@@ -191,23 +191,31 @@ namespace GTI.Modules.Shared
 
         public void RedesignUI()
         {
-            m_cancelButton.Location = new Point(172, 170);
-            m_clearCardButton.Location = new Point(13, 170);
-            m_messageLabel.Location = new Point(14, 16);
-            m_messageLabel.Size = new System.Drawing.Size(286, 80);
-            m_messageLabel.Text = "Please swipe or enter your player card.";
-            m_txtbxCardNumber.Visible = true;
-           
+            m_messageLabel.Location = new Point(12, 39);
+            m_messageLabel.Size = new System.Drawing.Size(296, 36);
+            m_messageLabel.Text = "Please swipe the card.";
 
+            m_rdbtn_SwipeEnter.Visible = true;
+            m_rdbtn_SwipeEnter.Size = new System.Drawing.Size(296, 25);
+            m_rdbtn_SwipeEnter.Location = new Point(12, 91);
+
+            //m_txtbxCardNumber.Visible = true;
+            m_txtbxCardNumber.Size = new System.Drawing.Size(296, 27);
+            m_txtbxCardNumber.Location = new Point(12, 116);
+            m_txtbxCardNumber.TabIndex = 0;
+            m_txtbxCardNumber.Focus();
+
+            m_clearCardButton.Size = new System.Drawing.Size(133, 30);
+            m_clearCardButton.Location = new Point(15, 166);
             //Use clear button as ok button
-            m_clearCardButton.Text = "Ok";
+            m_clearCardButton.Text = "OK";
             //removed the current event
             m_clearCardButton.Click -= new EventHandler(ClearCardClick);
             //add the new current event
             m_clearCardButton.Click += new EventHandler(FindPlayerOkClick);
-            
-            m_txtbxCardNumber.TabIndex = 0;
-            m_txtbxCardNumber.Focus();
+                    
+            m_cancelButton.Location = new Point(176, 167);
+            m_cancelButton.Size = new System.Drawing.Size(133,30);
         }
 
 
@@ -693,5 +701,30 @@ namespace GTI.Modules.Shared
         }
 
 #endregion
+
+        private void m_rdbtn_Click(object sender, EventArgs e)
+        {
+            RadioButton selectedRadio = (RadioButton)sender;
+            selectedRadio.Checked = true;
+        }
+
+        private void m_rdbtn_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton selectedRadio = (RadioButton)sender;
+           var  CardSwipeOrEnter = selectedRadio.Tag.ToString();
+           if (CardSwipeOrEnter == "Enter")
+           {
+               m_txtbxCardNumber.Visible = true;
+               m_clearCardButton.Visible = true;
+               m_messageLabel.Text = "Please enter the card.";
+           }
+           else
+           {
+               m_txtbxCardNumber.Visible = false;
+               m_clearCardButton.Visible = false;
+               m_messageLabel.Text = "Please swipe the card.";
+           }
+
+        }       
     }
 }

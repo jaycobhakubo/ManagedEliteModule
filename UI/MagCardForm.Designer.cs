@@ -40,6 +40,10 @@ namespace GTI.Modules.Shared
             this.m_timeoutProgress = new System.Windows.Forms.ProgressBar();
             this.m_kioskTimer = new System.Windows.Forms.Timer(this.components);
             this.m_txtbxCardNumber = new GTI.Controls.TextBoxNumeric();
+            this.m_rdbtnSwipeCard = new System.Windows.Forms.RadioButton();
+            this.m_rdbtnEnterCard = new System.Windows.Forms.RadioButton();
+            this.m_rdbtn_SwipeEnter = new System.Windows.Forms.Panel();
+            this.m_rdbtn_SwipeEnter.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_clearCardButton
@@ -78,8 +82,8 @@ namespace GTI.Modules.Shared
             // 
             // lblAnalyze
             // 
-            resources.ApplyResources(this.lblAnalyze, "lblAnalyze");
             this.lblAnalyze.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.lblAnalyze, "lblAnalyze");
             this.lblAnalyze.Name = "lblAnalyze";
             // 
             // lblPleaseWait
@@ -130,18 +134,47 @@ namespace GTI.Modules.Shared
             this.m_txtbxCardNumber.Name = "m_txtbxCardNumber";
             this.m_txtbxCardNumber.Precision = 2;
             // 
+            // m_rdbtnSwipeCard
+            // 
+            resources.ApplyResources(this.m_rdbtnSwipeCard, "m_rdbtnSwipeCard");
+            this.m_rdbtnSwipeCard.Checked = true;
+            this.m_rdbtnSwipeCard.Name = "m_rdbtnSwipeCard";
+            this.m_rdbtnSwipeCard.TabStop = true;
+            this.m_rdbtnSwipeCard.Tag = "Swipe";
+            this.m_rdbtnSwipeCard.UseVisualStyleBackColor = true;
+            this.m_rdbtnSwipeCard.CheckedChanged += new System.EventHandler(this.m_rdbtn_CheckedChanged);
+            this.m_rdbtnSwipeCard.Click += new System.EventHandler(this.m_rdbtn_Click);
+            // 
+            // m_rdbtnEnterCard
+            // 
+            resources.ApplyResources(this.m_rdbtnEnterCard, "m_rdbtnEnterCard");
+            this.m_rdbtnEnterCard.Name = "m_rdbtnEnterCard";
+            this.m_rdbtnEnterCard.Tag = "Enter";
+            this.m_rdbtnEnterCard.UseVisualStyleBackColor = true;
+            this.m_rdbtnEnterCard.CheckedChanged += new System.EventHandler(this.m_rdbtn_CheckedChanged);
+            this.m_rdbtnEnterCard.Click += new System.EventHandler(this.m_rdbtn_Click);
+            // 
+            // m_rdbtn_SwipeEnter
+            // 
+            this.m_rdbtn_SwipeEnter.BackColor = System.Drawing.Color.Transparent;
+            this.m_rdbtn_SwipeEnter.Controls.Add(this.m_rdbtnEnterCard);
+            this.m_rdbtn_SwipeEnter.Controls.Add(this.m_rdbtnSwipeCard);
+            resources.ApplyResources(this.m_rdbtn_SwipeEnter, "m_rdbtn_SwipeEnter");
+            this.m_rdbtn_SwipeEnter.Name = "m_rdbtn_SwipeEnter";
+            // 
             // MagCardForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::GTI.Modules.Shared.Properties.Resources.MagCardBack;
             resources.ApplyResources(this, "$this");
             this.ControlBox = false;
+            this.Controls.Add(this.m_rdbtn_SwipeEnter);
             this.Controls.Add(this.m_txtbxCardNumber);
+            this.Controls.Add(this.m_messageLabel);
             this.Controls.Add(this.m_timeoutProgress);
             this.Controls.Add(this.m_lblPatronMessage);
             this.Controls.Add(this.m_btnNoThanks);
             this.Controls.Add(this.lblAnalyze);
-            this.Controls.Add(this.m_messageLabel);
             this.Controls.Add(this.m_cancelButton);
             this.Controls.Add(this.m_clearCardButton);
             this.Controls.Add(this.lblPleaseWait);
@@ -160,6 +193,8 @@ namespace GTI.Modules.Shared
             this.Click += new System.EventHandler(this.SomethingWasClicked);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MagCardForm_KeyDown);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnKeyPress);
+            this.m_rdbtn_SwipeEnter.ResumeLayout(false);
+            this.m_rdbtn_SwipeEnter.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,5 +212,8 @@ namespace GTI.Modules.Shared
         private System.Windows.Forms.ProgressBar m_timeoutProgress;
         private System.Windows.Forms.Timer m_kioskTimer;
         private Controls.TextBoxNumeric m_txtbxCardNumber;
+        private System.Windows.Forms.RadioButton m_rdbtnSwipeCard;
+        private System.Windows.Forms.RadioButton m_rdbtnEnterCard;
+        private System.Windows.Forms.Panel m_rdbtn_SwipeEnter;
     }
 }

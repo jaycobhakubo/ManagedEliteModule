@@ -33,7 +33,6 @@ D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\bin\Debug\GTIControls.pdb
 D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\ManagedEliteModule.csprojResolveAssemblyReference.cache
 D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\GTI.Modules.Shared.Properties.Resources.resources
 D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\GTI.Modules.Shared.AboutBox.resources
-D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\GTI.Modules.Shared.MagCardForm2.resources
 D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\GTI.Modules.Shared.EliteForm.resources
 D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\GTI.Modules.Shared.EliteGradientForm.resources
 D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\GTI.Modules.Shared.UI.NumericInputForm.resources
@@ -45,7 +44,6 @@ D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\GTI.Modules.Share
 D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\GTI.Modules.Shared.SplashScreen.resources
 D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\GTI.Modules.Shared.WaitForm.resources
 D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\GTI.Modules.Shared.Properties.Resources.es.resources
-D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\GTI.Modules.Shared.MagCardForm2.es.resources
 D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\GTI.Modules.Shared.MagCardForm.es.resources
 D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\ManagedEliteModule.csproj.GenerateResource.Cache
 D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\es\ManagedEliteModule.resources.dll
