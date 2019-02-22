@@ -1,6 +1,6 @@
 namespace GTI.Modules.Shared
 {
-    partial class MagCardForm
+    partial class MagCardForm2
     {
         /// <summary>
         /// Required designer variable.
@@ -29,17 +29,14 @@ namespace GTI.Modules.Shared
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MagCardForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MagCardForm2));
             this.m_clearCardButton = new GTI.Controls.ImageButton();
             this.m_cancelButton = new GTI.Controls.ImageButton();
             this.m_messageLabel = new System.Windows.Forms.Label();
-            this.lblAnalyze = new System.Windows.Forms.Label();
-            this.lblPleaseWait = new System.Windows.Forms.Label();
-            this.m_btnNoThanks = new GTI.Controls.ImageButton();
-            this.m_lblPatronMessage = new System.Windows.Forms.Label();
-            this.m_timeoutProgress = new System.Windows.Forms.ProgressBar();
             this.m_kioskTimer = new System.Windows.Forms.Timer(this.components);
             this.m_txtbxCardNumber = new GTI.Controls.TextBoxNumeric();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // m_clearCardButton
@@ -76,47 +73,6 @@ namespace GTI.Modules.Shared
             resources.ApplyResources(this.m_messageLabel, "m_messageLabel");
             this.m_messageLabel.Name = "m_messageLabel";
             // 
-            // lblAnalyze
-            // 
-            resources.ApplyResources(this.lblAnalyze, "lblAnalyze");
-            this.lblAnalyze.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnalyze.Name = "lblAnalyze";
-            // 
-            // lblPleaseWait
-            // 
-            this.lblPleaseWait.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.lblPleaseWait, "lblPleaseWait");
-            this.lblPleaseWait.Name = "lblPleaseWait";
-            // 
-            // m_btnNoThanks
-            // 
-            this.m_btnNoThanks.BackColor = System.Drawing.Color.Transparent;
-            this.m_btnNoThanks.FocusColor = System.Drawing.Color.Black;
-            this.m_btnNoThanks.ImageNormal = global::GTI.Modules.Shared.Properties.Resources.RedButtonUp;
-            this.m_btnNoThanks.ImagePressed = global::GTI.Modules.Shared.Properties.Resources.RedButtonDown;
-            resources.ApplyResources(this.m_btnNoThanks, "m_btnNoThanks");
-            this.m_btnNoThanks.Name = "m_btnNoThanks";
-            this.m_btnNoThanks.SecondaryTextPadding = new System.Windows.Forms.Padding(5);
-            this.m_btnNoThanks.ShowFocus = false;
-            this.m_btnNoThanks.UseVisualStyleBackColor = false;
-            this.m_btnNoThanks.Click += new System.EventHandler(this.CancelClick);
-            // 
-            // m_lblPatronMessage
-            // 
-            this.m_lblPatronMessage.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.m_lblPatronMessage, "m_lblPatronMessage");
-            this.m_lblPatronMessage.ForeColor = System.Drawing.Color.Blue;
-            this.m_lblPatronMessage.Name = "m_lblPatronMessage";
-            this.m_lblPatronMessage.Click += new System.EventHandler(this.SomethingWasClicked);
-            // 
-            // m_timeoutProgress
-            // 
-            this.m_timeoutProgress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(186)))), ((int)(((byte)(192)))));
-            this.m_timeoutProgress.ForeColor = System.Drawing.Color.Gold;
-            resources.ApplyResources(this.m_timeoutProgress, "m_timeoutProgress");
-            this.m_timeoutProgress.Name = "m_timeoutProgress";
-            this.m_timeoutProgress.Click += new System.EventHandler(this.SomethingWasClicked);
-            // 
             // m_kioskTimer
             // 
             this.m_kioskTimer.Enabled = true;
@@ -130,27 +86,38 @@ namespace GTI.Modules.Shared
             this.m_txtbxCardNumber.Name = "m_txtbxCardNumber";
             this.m_txtbxCardNumber.Precision = 2;
             // 
-            // MagCardForm
+            // radioButton1
+            // 
+            resources.ApplyResources(this.radioButton1, "radioButton1");
+            this.radioButton1.Checked = true;
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.TabStop = true;
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            resources.ApplyResources(this.radioButton2, "radioButton2");
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // MagCardForm2
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::GTI.Modules.Shared.Properties.Resources.MagCardBack;
             resources.ApplyResources(this, "$this");
             this.ControlBox = false;
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.m_txtbxCardNumber);
-            this.Controls.Add(this.m_timeoutProgress);
-            this.Controls.Add(this.m_lblPatronMessage);
-            this.Controls.Add(this.m_btnNoThanks);
-            this.Controls.Add(this.lblAnalyze);
             this.Controls.Add(this.m_messageLabel);
             this.Controls.Add(this.m_cancelButton);
             this.Controls.Add(this.m_clearCardButton);
-            this.Controls.Add(this.lblPleaseWait);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "MagCardForm";
+            this.Name = "MagCardForm2";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -170,12 +137,9 @@ namespace GTI.Modules.Shared
         private GTI.Controls.ImageButton m_clearCardButton;
         private GTI.Controls.ImageButton m_cancelButton;
         private System.Windows.Forms.Label m_messageLabel;
-        private System.Windows.Forms.Label lblAnalyze;
-        private System.Windows.Forms.Label lblPleaseWait;
-        private Controls.ImageButton m_btnNoThanks;
-        private System.Windows.Forms.Label m_lblPatronMessage;
-        private System.Windows.Forms.ProgressBar m_timeoutProgress;
         private System.Windows.Forms.Timer m_kioskTimer;
         private Controls.TextBoxNumeric m_txtbxCardNumber;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
     }
 }
