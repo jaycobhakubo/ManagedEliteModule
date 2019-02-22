@@ -24,6 +24,10 @@ namespace GTI.Modules.Shared
         private string m_lastName;
         private string m_firstName;
         private string m_middleInitial;
+        //private string m_birthDate;
+        private DateTime m_birthDate;
+        //private string m_lastVisitDate;
+        private DateTime m_lastVisitDate;
         #endregion
 
         #region Member Methods
@@ -169,6 +173,32 @@ namespace GTI.Modules.Shared
                 return returnVal;
             }
         }
+
+        public DateTime BirthDate
+        {
+            get
+            {
+                return m_birthDate;
+            }
+            set
+            {
+                m_birthDate = value;
+            }
+        }
+
+        public DateTime LastVisitDate
+        {
+            get
+            {
+                return m_lastVisitDate;
+            }
+            set
+            {
+                m_lastVisitDate = value;
+            }
+        }
+
+
         #endregion
     }
 
@@ -246,6 +276,7 @@ namespace GTI.Modules.Shared
             else
                 requestWriter.Write((ushort)0);
 
+
             // Set the bytes to be sent.
             m_requestPayload = requestStream.ToArray();
 
@@ -299,6 +330,19 @@ namespace GTI.Modules.Shared
                     // Last Name
                     stringLen = responseReader.ReadUInt16();
                     item.LastName = new string(responseReader.ReadChars(stringLen));
+
+
+                    // BirthDate
+                    string dateTempValueString;
+                    stringLen = responseReader.ReadUInt16();
+                    dateTempValueString = new string(responseReader.ReadChars(stringLen));
+                    item.BirthDate = Convert.ToDateTime(dateTempValueString);
+
+
+                    // LatVisitDate
+                    stringLen = responseReader.ReadUInt16();
+                    dateTempValueString = new string(responseReader.ReadChars(stringLen));
+                    item.LastVisitDate = Convert.ToDateTime(dateTempValueString);
 
                     m_players.Add(item);
                 }
