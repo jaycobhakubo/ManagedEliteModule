@@ -21,12 +21,12 @@ namespace GTI.Modules.Shared
     {
         #region Member Variables
         private int m_id;
-        private string m_lastName;
         private string m_firstName;
         private string m_middleInitial;
-        //private string m_birthDate;
+        private string m_lastName;
+        private string m_magCard;
+        private string m_playerIdentity;
         private DateTime m_birthDate;
-        //private string m_lastVisitDate;
         private DateTime m_lastVisitDate;
         #endregion
 
@@ -109,20 +109,7 @@ namespace GTI.Modules.Shared
             }
         }
 
-        /// <summary>
-        /// Gets or sets the player's last name.
-        /// </summary>
-        public string LastName
-        {
-            get
-            {
-                return m_lastName;
-            }
-            set
-            {
-                m_lastName = value;
-            }
-        }
+      
 
         /// <summary>
         /// Gets or sets the player's first name.
@@ -139,7 +126,7 @@ namespace GTI.Modules.Shared
             }
         }
 
-        /// <summary>
+                /// <summary>
         /// Gets or sets the player's middle initial.
         /// </summary>
         public string MiddleInitial
@@ -153,6 +140,25 @@ namespace GTI.Modules.Shared
                 m_middleInitial = value;
             }
         }
+
+          /// <summary>
+        /// Gets or sets the player's last name.
+        /// </summary>
+        public string LastName
+        {
+            get
+            {
+                return m_lastName;
+            }
+            set
+            {
+                m_lastName = value;
+            }
+        }
+
+
+
+
 
         /// <summary>
         /// Gets the name of the player in the form [First Name] [Last Name].
@@ -171,6 +177,36 @@ namespace GTI.Modules.Shared
                 returnVal += m_lastName;
 
                 return returnVal;
+            }
+        }
+
+          /// <summary>
+        /// Gets or sets the player's mag card number
+        /// </summary>
+        public string MagCard
+        {
+            get
+            {
+                return m_magCard;
+            }
+            set
+            {
+                m_magCard = value;
+            }
+        }
+
+                  /// <summary>
+        /// Gets or sets the player's player's identity
+        /// </summary>
+        public string PlayerIdentity
+        {
+            get
+            {
+                return m_playerIdentity;
+            }
+            set
+            {
+                m_playerIdentity = value;
             }
         }
 
@@ -214,6 +250,7 @@ namespace GTI.Modules.Shared
         #region Member Variables
         protected string m_firstName;
         protected string m_lastName;
+        protected string m_searchCategory;
         protected List<PlayerListItem> m_players;
         #endregion
 
@@ -222,7 +259,8 @@ namespace GTI.Modules.Shared
         /// Initializes a new instance of the GetPlayerListMessage class.
         /// </summary>
         public GetPlayerListMessage()
-            : this(null, null)
+            //: this(null, null)
+             : this(null)
         {
         }
 
@@ -238,12 +276,14 @@ namespace GTI.Modules.Shared
         /// <param name="lastName">The last name to search for.  
         /// Partial matches will be returned.  A blank last name means any 
         /// last name.</param>
-        public GetPlayerListMessage(string firstName, string lastName)
+       // public GetPlayerListMessage(string firstName, string lastName)
+            public GetPlayerListMessage(string searchCategory)
         {
             m_id = 8014; // Get Player List
             m_strMessageName = "Get Player List";
-            FirstName = firstName;
-            LastName = lastName;
+            m_searchCategory = searchCategory;
+            //FirstName = firstName;
+            //LastName = lastName;
             m_players = new List<PlayerListItem>();
         }
         #endregion
@@ -258,21 +298,34 @@ namespace GTI.Modules.Shared
             MemoryStream requestStream = new MemoryStream();
             BinaryWriter requestWriter = new BinaryWriter(requestStream, Encoding.Unicode);
 
-            // Last Name
-            if(!string.IsNullOrEmpty(m_lastName))
-            {
-                requestWriter.Write((ushort)m_lastName.Length);
-                requestWriter.Write(m_lastName.ToCharArray());
-            }
-            else
-                requestWriter.Write((ushort)0);
 
-            // First Name
-            if(!string.IsNullOrEmpty(m_firstName))
+                if(!string.IsNullOrEmpty(m_searchCategory))
             {
-                requestWriter.Write((ushort)m_firstName.Length);
-                requestWriter.Write(m_firstName.ToCharArray());
+                requestWriter.Write((ushort)m_searchCategory.Length);
+                requestWriter.Write(m_searchCategory.ToCharArray());
             }
+
+
+               //if(!string.IsNullOrEmpty(m_lastName))
+            //{
+            //    requestWriter.Write((ushort)m_lastName.Length);
+            //    requestWriter.Write(m_lastName.ToCharArray());
+            //}
+            //// Last Name
+            //if(!string.IsNullOrEmpty(m_lastName))
+            //{
+            //    requestWriter.Write((ushort)m_lastName.Length);
+            //    requestWriter.Write(m_lastName.ToCharArray());
+            //}
+            //else
+            //    requestWriter.Write((ushort)0);
+
+            //// First Name
+            //if(!string.IsNullOrEmpty(m_firstName))
+            //{
+            //    requestWriter.Write((ushort)m_firstName.Length);
+            //    requestWriter.Write(m_firstName.ToCharArray());
+            //}
             else
                 requestWriter.Write((ushort)0);
 
@@ -331,6 +384,13 @@ namespace GTI.Modules.Shared
                     stringLen = responseReader.ReadUInt16();
                     item.LastName = new string(responseReader.ReadChars(stringLen));
 
+                      // Mag Card
+                    stringLen = responseReader.ReadUInt16();
+                    item.MagCard = new string(responseReader.ReadChars(stringLen));
+
+                       // Player Identity
+                    stringLen = responseReader.ReadUInt16();
+                    item.PlayerIdentity = new string(responseReader.ReadChars(stringLen));
 
                     // BirthDate
                     string dateTempValueString;
@@ -361,48 +421,72 @@ namespace GTI.Modules.Shared
         }
         #endregion
 
-        #region Member Properties
-        /// <summary>
-        /// Gets or sets the first name to search for.  A blank first name means 
-        /// any first name.
-        /// </summary>
-        public string FirstName
+
+         public string SearchCategory
         {
             get
             {
-                return m_firstName;
+                return m_searchCategory;
             }
             set
             {
                 if(value == null)
-                    m_firstName = null;
+                    m_searchCategory = null;
                 else if(value.Length <= StringSizes.MaxNameLength)
-                    m_firstName = value;
+                    m_searchCategory = value;
                 else
-                    throw new ArgumentException("FirstName is too big.");
+                    throw new ArgumentException("Category search is too big.");
             }
         }
+
+
+
+        #region Member Properties
+
+
+        
+
+        /// <summary>
+        /// Gets or sets the first name to search for.  A blank first name means 
+        /// any first name.
+        /// </summary>
+         public string FirstName
+         {
+             get
+             {
+                 return m_firstName;
+             }
+             set
+             {
+                 if (value == null)
+                     m_firstName = null;
+                 else if (value.Length <= StringSizes.MaxNameLength)
+                     m_firstName = value;
+                 else
+                     throw new ArgumentException("FirstName is too big.");
+             }
+         }
 
         /// <summary>
         /// Gets or sets the last name to search for.  A blank last name means 
         /// any last name.
         /// </summary>
-        public string LastName
-        {
-            get
-            {
-                return m_lastName;
-            }
-            set
-            {
-                if(value == null)
-                    m_lastName = null;
-                else if(value.Length <= StringSizes.MaxNameLength)
-                    m_lastName = value;
-                else
-                    throw new ArgumentException("LastName is too big.");
-            }
-        }
+         public string LastName
+         {
+             get
+             {
+                 return m_lastName;
+             }
+             set
+             {
+                 if (value == null)
+                     m_lastName = null;
+                 else if (value.Length <= StringSizes.MaxNameLength)
+                     m_lastName = value;
+                 else
+                     throw new ArgumentException("LastName is too big.");
+             }
+         }
 
         /// <summary>
         /// Gets a list of all players received from the server.
