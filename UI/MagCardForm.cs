@@ -66,7 +66,7 @@ namespace GTI.Modules.Shared
         /// Initializes a new instance of the MagCardForm class in window 
         /// mode.
         /// </summary>
-        /// <param name="magCardReader">The mag. card reader used to dectect 
+        /// <param name="magCardReader">The mag. card reader used to dectect  
         /// swipes.</param>
         /// <exception cref="System.ArgumentNullException">magCardReader is a 
         /// null reference.</exception>
@@ -189,34 +189,34 @@ namespace GTI.Modules.Shared
             }
         }
 
-        public void RedesignUI()
-        {
-            m_messageLabel.Location = new Point(12, 39);
-            m_messageLabel.Size = new System.Drawing.Size(296, 36);
-            m_messageLabel.Text = "Please swipe the card.";
+        //public void RedesignUI()
+        //{
+        //    m_messageLabel.Location = new Point(12, 39);
+        //    m_messageLabel.Size = new System.Drawing.Size(296, 36);
+        //    m_messageLabel.Text = "Please swipe the card.";
 
-            m_rdbtn_SwipeEnter.Visible = true;
-            m_rdbtn_SwipeEnter.Size = new System.Drawing.Size(296, 25);
-            m_rdbtn_SwipeEnter.Location = new Point(12, 91);
+        //    m_rdbtn_SwipeEnter.Visible = true;
+        //    m_rdbtn_SwipeEnter.Size = new System.Drawing.Size(296, 25);
+        //    m_rdbtn_SwipeEnter.Location = new Point(12, 91);
 
-            //m_txtbxCardNumber.Visible = true;
-            m_txtbxCardNumber.Size = new System.Drawing.Size(296, 27);
-            m_txtbxCardNumber.Location = new Point(12, 116);
-            m_txtbxCardNumber.TabIndex = 0;
-            m_txtbxCardNumber.Focus();
+        //    //m_txtbxCardNumber.Visible = true;
+        //    m_txtbxCardNumber.Size = new System.Drawing.Size(296, 27);
+        //    m_txtbxCardNumber.Location = new Point(12, 116);
+        //    m_txtbxCardNumber.TabIndex = 0;
+        //    m_txtbxCardNumber.Focus();
 
-            m_clearCardButton.Size = new System.Drawing.Size(133, 30);
-            m_clearCardButton.Location = new Point(15, 166);
-            //Use clear button as ok button
-            m_clearCardButton.Text = "OK";
-            //removed the current event
-            m_clearCardButton.Click -= new EventHandler(ClearCardClick);
-            //add the new current event
-            m_clearCardButton.Click += new EventHandler(FindPlayerOkClick);
+        //    m_clearCardButton.Size = new System.Drawing.Size(133, 30);
+        //    m_clearCardButton.Location = new Point(15, 166);
+        //    //Use clear button as ok button
+        //    m_clearCardButton.Text = "OK";
+        //    //removed the current event
+        //    m_clearCardButton.Click -= new EventHandler(ClearCardClick);
+        //    //add the new current event
+        //    m_clearCardButton.Click += new EventHandler(FindPlayerOkClick);
                     
-            m_cancelButton.Location = new Point(176, 167);
-            m_cancelButton.Size = new System.Drawing.Size(133,30);
-        }
+        //    m_cancelButton.Location = new Point(176, 167);
+        //    m_cancelButton.Size = new System.Drawing.Size(133,30);
+        //}
 
 
         /// <summary>

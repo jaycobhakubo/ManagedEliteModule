@@ -23,6 +23,13 @@ C:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\ManagedEliteModul
 C:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\es\ManagedEliteModule.resources.dll
 C:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\ManagedEliteModule.dll
 C:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\ManagedEliteModule.pdb
+D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\bin\Debug\ManagedEliteModule.dll
+D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\bin\Debug\ManagedEliteModule.pdb
+D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\bin\Debug\es\ManagedEliteModule.resources.dll
+D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\bin\Debug\EliteMCPLib.dll
+D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\bin\Debug\GTIControls.dll
+D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\bin\Debug\IDAutomation.NetAssembly.dll
+D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\bin\Debug\GTIControls.pdb
 D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\ManagedEliteModule.csprojResolveAssemblyReference.cache
 D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\GTI.Modules.Shared.Properties.Resources.resources
 D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\GTI.Modules.Shared.AboutBox.resources
@@ -39,13 +46,6 @@ D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\GTI.Modules.Share
 D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\GTI.Modules.Shared.Properties.Resources.es.resources
 D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\GTI.Modules.Shared.MagCardForm.es.resources
 D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\ManagedEliteModule.csproj.GenerateResource.Cache
-D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\bin\Debug\ManagedEliteModule.dll
-D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\bin\Debug\ManagedEliteModule.pdb
-D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\bin\Debug\es\ManagedEliteModule.resources.dll
-D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\bin\Debug\EliteMCPLib.dll
-D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\bin\Debug\GTIControls.dll
-D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\bin\Debug\IDAutomation.NetAssembly.dll
-D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\bin\Debug\GTIControls.pdb
 D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\es\ManagedEliteModule.resources.dll
 D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\ManagedEliteModule.dll
 D:\fortunet\gti-gametech\Dev\DLLs\ManagedEliteModule\obj\Debug\ManagedEliteModule.pdb
