@@ -10,30 +10,31 @@ using System.Collections.Generic;
 
 namespace GTI.Modules.Shared.Data
 {
+    public class PromoInfo
+    {
+        public int promoGroupID;
+        public int promoGroupLineNumber;
+        public string promoText;
+    }
+
     public class SetPromoTextMessage : ServerMessage
     {
         #region Member variables and classes
-        public class PromoInfo
-        {
-            public int promoGroupID;
-            public string promoText;
-        }
-
         private List<PromoInfo> m_promoData = new List<PromoInfo>();
-        private int m_firstGroup = 0;
-        private int m_lastGroup = 0;
+        private List<PromoInfo> m_originalPromoData = null;
         #endregion
 
         #region Member Properties
-        public string[] PromoData
+        public string[] PromoDataFromTextArray
         {
             set
             {
                 m_promoData.Clear();
-                m_firstGroup = 1;
-                m_lastGroup = 1;
 
                 int currentGroupID = 1;
+                Dictionary<int, int> nextGroupLine = new Dictionary<int, int>();
+                
+                nextGroupLine.Add(1, 1);
 
                 foreach(string s in value)
                 {
@@ -44,21 +45,46 @@ namespace GTI.Modules.Shared.Data
                         if(!Int32.TryParse(s.Substring(6), out currentGroupID))
                             currentGroupID = groupWas;
 
-                        if (currentGroupID < m_firstGroup)
-                            m_firstGroup = currentGroupID;
-
-                        if (currentGroupID > m_lastGroup)
-                            m_lastGroup = currentGroupID;
+                        if (!nextGroupLine.ContainsKey(currentGroupID))
+                            nextGroupLine.Add(currentGroupID, 1);
                     }
                     else
                     {
                         PromoInfo pi = new PromoInfo();
 
                         pi.promoGroupID = currentGroupID;
+                        nextGroupLine.TryGetValue(currentGroupID, out pi.promoGroupLineNumber);
+                        nextGroupLine[currentGroupID] = pi.promoGroupLineNumber + 1;
                         pi.promoText = (s == string.Empty? " " : s);
                         m_promoData.Add(pi);
                     }
                 }
+            }
+        }
+
+        public List<PromoInfo> PromoData
+        {
+            get
+            {
+                return m_promoData;
+            }
+
+            set
+            {
+                m_promoData = value;
+            }
+        }
+
+        public List<PromoInfo> OriginalPromoData
+        {
+            get
+            {
+                return m_originalPromoData;
+            }
+
+            set
+            {
+                m_originalPromoData = value;
             }
         }
         #endregion
@@ -69,18 +95,21 @@ namespace GTI.Modules.Shared.Data
         /// </summary>
         SetPromoTextMessage()
         {
+            m_id = 18263; // Modify Channel Data Message
         }
 
-        public SetPromoTextMessage(string[] promoData)
+        public SetPromoTextMessage(string[] promoData, List<PromoInfo> originalPromoData = null)
         {
             m_id = 18263; // Modify Channel Data Message
-            PromoData = promoData;
+            PromoDataFromTextArray = promoData;
+            OriginalPromoData = originalPromoData;
         }
 
-        public SetPromoTextMessage(List<PromoInfo> promoData)
+        public SetPromoTextMessage(List<PromoInfo> promoData, List<PromoInfo> originalPromoData = null)
         {
             m_id = 18263; // Modify Channel Data Message
             m_promoData = promoData;
+            OriginalPromoData = originalPromoData;
         }
         #endregion
 
@@ -94,19 +123,66 @@ namespace GTI.Modules.Shared.Data
             MemoryStream requestStream = new MemoryStream();
             BinaryWriter requestWriter = new BinaryWriter(requestStream, Encoding.Unicode);
 
-            requestWriter.Write((int)m_promoData.Count);
+            Dictionary<string, object> orig = new Dictionary<string,object>();
+            Dictionary<string, object> promo = new Dictionary<string,object>();
 
-            for (int currentGroup = m_firstGroup; currentGroup <= m_lastGroup; currentGroup++)
+            if(m_originalPromoData != null)
             {
-                ushort groupLine = 0;
+                foreach(PromoInfo pi in m_originalPromoData)
+                    orig.Add(pi.promoGroupID.ToString()+","+pi.promoGroupLineNumber.ToString(), pi);
+            }
 
-                foreach (PromoInfo pi in m_promoData.FindAll(i => i.promoGroupID == currentGroup))
+            foreach(PromoInfo pi in m_promoData)
+                promo.Add(pi.promoGroupID.ToString()+","+pi.promoGroupLineNumber.ToString(), pi);
+
+            //lines to remove
+            if (m_originalPromoData == null)
+            {
+                requestWriter.Write((int)0);
+            }
+            else
+            {
+                List<PromoInfo> remove = new List<PromoInfo>();
+
+                foreach(KeyValuePair<string, object> o in orig)
+                {
+                    PromoInfo pi = (PromoInfo)o.Value;
+
+                    if(!promo.ContainsKey(pi.promoGroupID.ToString()+","+pi.promoGroupLineNumber.ToString()))
+                        remove.Add(pi);
+                }
+
+                requestWriter.Write((int)remove.Count);
+
+                foreach (PromoInfo pi in remove)
                 {
                     requestWriter.Write(pi.promoGroupID);
-                    requestWriter.Write(++groupLine);
-                    requestWriter.Write((ushort)pi.promoText.Length);
-                    requestWriter.Write(pi.promoText.ToCharArray());
+                    requestWriter.Write((ushort)pi.promoGroupLineNumber);
                 }
+            }
+
+            //lines to add or update
+            List<PromoInfo> addOrUpdate = new List<PromoInfo>();
+
+            foreach (KeyValuePair<string, object> o in promo)
+            {
+                PromoInfo pi = (PromoInfo)o.Value;
+
+                if (!orig.ContainsKey(pi.promoGroupID.ToString() + "," + pi.promoGroupLineNumber.ToString()) ||
+                    ((PromoInfo)orig[pi.promoGroupID.ToString() + "," + pi.promoGroupLineNumber.ToString()]).promoText != pi.promoText)
+                {
+                    addOrUpdate.Add(pi);
+                }
+            }
+            
+            requestWriter.Write((int)addOrUpdate.Count);
+
+            foreach(PromoInfo pi in addOrUpdate)
+            {
+                requestWriter.Write(pi.promoGroupID);
+                requestWriter.Write((ushort)pi.promoGroupLineNumber);
+                requestWriter.Write((ushort)pi.promoText.Length);
+                requestWriter.Write(pi.promoText.ToCharArray());
             }
 
             // Set the bytes to be sent.

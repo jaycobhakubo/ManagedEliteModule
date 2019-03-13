@@ -144,6 +144,7 @@
     <Compile Include="Business\ServerExceptions.cs" />
     <Compile Include="Business\Staff.cs" />
     <Compile Include="Data\AddRemoveFindScanCodeMessage.cs" />
+    <Compile Include="Data\AddToAuditLogMessage.cs" />
     <Compile Include="Data\BarcodeReader.cs" />
     <Compile Include="Data\ClientDataStoreAccessor.cs" />
     <Compile Include="Data\CommonValues.cs" />

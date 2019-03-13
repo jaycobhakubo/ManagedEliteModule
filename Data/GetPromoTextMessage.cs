@@ -12,12 +12,6 @@ namespace GTI.Modules.Shared.Data
     public class GetPromoTextMessage : ServerMessage
     {
         #region Member Variables
-        public class PromoInfo
-        {
-            public int promoGroupID;
-            public string promoText;
-        }
-
         private List<PromoInfo> m_promoData = new List<PromoInfo>();
         #endregion
 
@@ -92,7 +86,7 @@ namespace GTI.Modules.Shared.Data
                     PromoInfo pi = new PromoInfo();
 
                     pi.promoGroupID = responseReader.ReadInt32();
-                    responseReader.ReadUInt16(); //line in group - comming in in order
+                    pi.promoGroupLineNumber = responseReader.ReadUInt16();
 
                     ushort stringLen = responseReader.ReadUInt16();
                     if (stringLen > 0)

@@ -731,6 +731,7 @@ namespace GTI.Modules.Shared
 
         EnablePromoTextAfterReceiptAtPOS = 451,
         PromoTextAfterReceiptAtPOSRequiresPlayer = 452,
+        ForceMenuButtonAuthorization = 453,
 
     }   // (note: C# doesn't complain about the extra comma on the last item, so you don't have to change that line when adding a new item )
 
@@ -854,6 +855,7 @@ namespace GTI.Modules.Shared
         EditDailyMenu = 49, // US1772
         PurgePlayerPoints = 66,
         CardPositionMapManagement = 67,
+        RemovedCouponToPlayer = 69,
     }
     
     /// <summary>

@@ -68,8 +68,9 @@ namespace GTI.Modules.Shared
             {
                 if (codeData.Length > 0)
                 {
-                    OnBarcodeScanned(this, codeData.ToString());
+                    string barcode = codeData.ToString();
                     Reset();
+                    OnBarcodeScanned(this, barcode);
                 }
             }
         }
