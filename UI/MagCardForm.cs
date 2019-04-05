@@ -66,7 +66,7 @@ namespace GTI.Modules.Shared
         /// Initializes a new instance of the MagCardForm class in window 
         /// mode.
         /// </summary>
-        /// <param name="magCardReader">The mag. card reader used to dectect  
+        /// <param name="magCardReader">The mag. card reader used to dectect 
         /// swipes.</param>
         /// <exception cref="System.ArgumentNullException">magCardReader is a 
         /// null reference.</exception>
@@ -168,10 +168,10 @@ namespace GTI.Modules.Shared
                 DrawAsGradient = true;
                 Size = WinSize;
 
-                m_messageLabel.Location = WinMessageLoc;           
+                m_messageLabel.Location = WinMessageLoc;
                 //m_messageLabel.Font = WinMessageFont;
 
-                m_clearCardButton.Location = WinButton1Loc;             
+                m_clearCardButton.Location = WinButton1Loc;
                 m_clearCardButton.Size = WinButtonSize;
                 m_clearCardButton.Font = WinButtonFont;
                 m_clearCardButton.ImageNormal = Resources.BlueButtonUp;
@@ -179,7 +179,7 @@ namespace GTI.Modules.Shared
                 m_clearCardButton.ShowFocus = true;
                 m_clearCardButton.TabStop = true;
 
-                m_cancelButton.Location = WinButton2Loc;                   
+                m_cancelButton.Location = WinButton2Loc;
                 m_cancelButton.Size = WinButtonSize;
                 m_cancelButton.Font = WinButtonFont;
                 m_cancelButton.ImageNormal = Resources.BlueButtonUp;
@@ -188,36 +188,6 @@ namespace GTI.Modules.Shared
                 m_cancelButton.TabStop = true;
             }
         }
-
-        //public void RedesignUI()
-        //{
-        //    m_messageLabel.Location = new Point(12, 39);
-        //    m_messageLabel.Size = new System.Drawing.Size(296, 36);
-        //    m_messageLabel.Text = "Please swipe the card.";
-
-        //    m_rdbtn_SwipeEnter.Visible = true;
-        //    m_rdbtn_SwipeEnter.Size = new System.Drawing.Size(296, 25);
-        //    m_rdbtn_SwipeEnter.Location = new Point(12, 91);
-
-        //    //m_txtbxCardNumber.Visible = true;
-        //    m_txtbxCardNumber.Size = new System.Drawing.Size(296, 27);
-        //    m_txtbxCardNumber.Location = new Point(12, 116);
-        //    m_txtbxCardNumber.TabIndex = 0;
-        //    m_txtbxCardNumber.Focus();
-
-        //    m_clearCardButton.Size = new System.Drawing.Size(133, 30);
-        //    m_clearCardButton.Location = new Point(15, 166);
-        //    //Use clear button as ok button
-        //    m_clearCardButton.Text = "OK";
-        //    //removed the current event
-        //    m_clearCardButton.Click -= new EventHandler(ClearCardClick);
-        //    //add the new current event
-        //    m_clearCardButton.Click += new EventHandler(FindPlayerOkClick);
-                    
-        //    m_cancelButton.Location = new Point(176, 167);
-        //    m_cancelButton.Size = new System.Drawing.Size(133,30);
-        //}
-
 
         /// <summary>
         /// Processes a dialog box key.
@@ -375,14 +345,6 @@ namespace GTI.Modules.Shared
             if (!m_readWholeCard)
                 m_magCardReader.Reset();
 
-            DialogResult = DialogResult.OK;
-            Close();
-        }
-
-        private void FindPlayerOkClick(object sender, EventArgs e)
-        {
-            m_cardData.Append(m_txtbxCardNumber.Text);
-            // What is this code do? = m_MatchedFilter = e.MatchFilter;
             DialogResult = DialogResult.OK;
             Close();
         }
@@ -701,30 +663,5 @@ namespace GTI.Modules.Shared
         }
 
 #endregion
-
-        private void m_rdbtn_Click(object sender, EventArgs e)
-        {
-            RadioButton selectedRadio = (RadioButton)sender;
-            selectedRadio.Checked = true;
-        }
-
-        private void m_rdbtn_CheckedChanged(object sender, EventArgs e)
-        {
-            RadioButton selectedRadio = (RadioButton)sender;
-           var  CardSwipeOrEnter = selectedRadio.Tag.ToString();
-           if (CardSwipeOrEnter == "Enter")
-           {
-               m_txtbxCardNumber.Visible = true;
-               m_clearCardButton.Visible = true;
-               m_messageLabel.Text = "Please enter the card.";
-           }
-           else
-           {
-               m_txtbxCardNumber.Visible = false;
-               m_clearCardButton.Visible = false;
-               m_messageLabel.Text = "Please swipe the card.";
-           }
-
-        }       
     }
 }

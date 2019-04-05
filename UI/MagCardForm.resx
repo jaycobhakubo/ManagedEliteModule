@@ -122,13 +122,13 @@
     <value>Tahoma, 10pt, style=Bold</value>
   </data>
   <data name="m_clearCardButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 183</value>
+    <value>16, 169</value>
   </data>
   <data name="m_clearCardButton.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>30, 30</value>
   </data>
   <data name="m_clearCardButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 30</value>
+    <value>133, 50</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="m_clearCardButton.TabIndex" type="System.Int32, mscorlib">
@@ -137,20 +137,17 @@
   <data name="m_clearCardButton.Text" xml:space="preserve">
     <value>Clear Current Card</value>
   </data>
-  <data name="m_clearCardButton.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;m_clearCardButton.Name" xml:space="preserve">
     <value>m_clearCardButton</value>
   </data>
   <data name="&gt;&gt;m_clearCardButton.Type" xml:space="preserve">
-    <value>GTI.Controls.ImageButton, GTIControls, Version=1.3.11.1324, Culture=neutral, PublicKeyToken=8379638106a1f521</value>
+    <value>GTI.Controls.ImageButton, GTIControls, Version=1.3.11.771, Culture=neutral, PublicKeyToken=8379638106a1f521</value>
   </data>
   <data name="&gt;&gt;m_clearCardButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;m_clearCardButton.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>6</value>
   </data>
   <data name="m_cancelButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 10pt, style=Bold</value>
@@ -160,13 +157,13 @@
     <value>NoControl</value>
   </data>
   <data name="m_cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 184</value>
+    <value>175, 169</value>
   </data>
   <data name="m_cancelButton.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>30, 30</value>
   </data>
   <data name="m_cancelButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 30</value>
+    <value>133, 50</value>
   </data>
   <data name="m_cancelButton.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -178,22 +175,22 @@
     <value>m_cancelButton</value>
   </data>
   <data name="&gt;&gt;m_cancelButton.Type" xml:space="preserve">
-    <value>GTI.Controls.ImageButton, GTIControls, Version=1.3.11.1324, Culture=neutral, PublicKeyToken=8379638106a1f521</value>
+    <value>GTI.Controls.ImageButton, GTIControls, Version=1.3.11.771, Culture=neutral, PublicKeyToken=8379638106a1f521</value>
   </data>
   <data name="&gt;&gt;m_cancelButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;m_cancelButton.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>5</value>
   </data>
   <data name="m_messageLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 15.75pt, style=Bold</value>
   </data>
   <data name="m_messageLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 58</value>
+    <value>12, 76</value>
   </data>
   <data name="m_messageLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 36</value>
+    <value>296, 23</value>
   </data>
   <data name="m_messageLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -214,13 +211,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;m_messageLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
+  </data>
+  <data name="lblAnalyze.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
   </data>
   <data name="lblAnalyze.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt, style=Bold</value>
   </data>
   <data name="lblAnalyze.Location" type="System.Drawing.Point, System.Drawing">
-    <value>635, 17</value>
+    <value>12, 9</value>
   </data>
   <data name="lblAnalyze.Size" type="System.Drawing.Size, System.Drawing">
     <value>296, 39</value>
@@ -248,13 +248,13 @@ cards to analyze have been swiped.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblAnalyze.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>3</value>
   </data>
   <data name="lblPleaseWait.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 18pt, style=Bold</value>
   </data>
   <data name="lblPleaseWait.Location" type="System.Drawing.Point, System.Drawing">
-    <value>578, 619</value>
+    <value>14, 35</value>
   </data>
   <data name="lblPleaseWait.Size" type="System.Drawing.Size, System.Drawing">
     <value>292, 121</value>
@@ -281,10 +281,10 @@ cards to analyze have been swiped.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblPleaseWait.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>7</value>
   </data>
   <data name="m_btnNoThanks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>171, 639</value>
+    <value>89, 169</value>
   </data>
   <data name="m_btnNoThanks.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>30, 30</value>
@@ -305,19 +305,19 @@ cards to analyze have been swiped.</value>
     <value>m_btnNoThanks</value>
   </data>
   <data name="&gt;&gt;m_btnNoThanks.Type" xml:space="preserve">
-    <value>GTI.Controls.ImageButton, GTIControls, Version=1.3.11.1324, Culture=neutral, PublicKeyToken=8379638106a1f521</value>
+    <value>GTI.Controls.ImageButton, GTIControls, Version=1.3.11.771, Culture=neutral, PublicKeyToken=8379638106a1f521</value>
   </data>
   <data name="&gt;&gt;m_btnNoThanks.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;m_btnNoThanks.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>2</value>
   </data>
   <data name="m_lblPatronMessage.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 18pt, style=Bold</value>
   </data>
   <data name="m_lblPatronMessage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>555, 58</value>
+    <value>14, 16</value>
   </data>
   <data name="m_lblPatronMessage.Size" type="System.Drawing.Size, System.Drawing">
     <value>292, 137</value>
@@ -344,10 +344,10 @@ cards to analyze have been swiped.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;m_lblPatronMessage.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>1</value>
   </data>
   <data name="m_timeoutProgress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 537</value>
+    <value>15, 223</value>
   </data>
   <data name="m_timeoutProgress.Size" type="System.Drawing.Size, System.Drawing">
     <value>293, 10</value>
@@ -368,135 +368,15 @@ cards to analyze have been swiped.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;m_timeoutProgress.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>0</value>
   </data>
   <metadata name="m_kioskTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="m_txtbxCardNumber.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 133</value>
-  </data>
-  <data name="m_txtbxCardNumber.MaxLength" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="m_txtbxCardNumber.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 27</value>
-  </data>
-  <data name="m_txtbxCardNumber.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="m_txtbxCardNumber.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;m_txtbxCardNumber.Name" xml:space="preserve">
-    <value>m_txtbxCardNumber</value>
-  </data>
-  <data name="&gt;&gt;m_txtbxCardNumber.Type" xml:space="preserve">
-    <value>GTI.Controls.TextBoxNumeric, GTIControls, Version=1.3.11.1324, Culture=neutral, PublicKeyToken=8379638106a1f521</value>
-  </data>
-  <data name="&gt;&gt;m_txtbxCardNumber.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;m_txtbxCardNumber.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="m_rdbtnSwipeCard.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="m_rdbtnSwipeCard.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="m_rdbtnSwipeCard.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 9.75pt, style=Bold</value>
-  </data>
-  <data name="m_rdbtnSwipeCard.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="m_rdbtnSwipeCard.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 0, 0, 0</value>
-  </data>
-  <data name="m_rdbtnSwipeCard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 33</value>
-  </data>
-  <data name="m_rdbtnSwipeCard.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="m_rdbtnSwipeCard.Text" xml:space="preserve">
-    <value>Swipe</value>
-  </data>
-  <data name="&gt;&gt;m_rdbtnSwipeCard.Name" xml:space="preserve">
-    <value>m_rdbtnSwipeCard</value>
-  </data>
-  <data name="&gt;&gt;m_rdbtnSwipeCard.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_rdbtnSwipeCard.Parent" xml:space="preserve">
-    <value>m_rdbtn_SwipeEnter</value>
-  </data>
-  <data name="&gt;&gt;m_rdbtnSwipeCard.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="m_rdbtnEnterCard.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="m_rdbtnEnterCard.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="m_rdbtnEnterCard.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 9.75pt, style=Bold</value>
-  </data>
-  <data name="m_rdbtnEnterCard.Location" type="System.Drawing.Point, System.Drawing">
-    <value>232, 0</value>
-  </data>
-  <data name="m_rdbtnEnterCard.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 5, 0</value>
-  </data>
-  <data name="m_rdbtnEnterCard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 33</value>
-  </data>
-  <data name="m_rdbtnEnterCard.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="m_rdbtnEnterCard.Text" xml:space="preserve">
-    <value>Enter</value>
-  </data>
-  <data name="&gt;&gt;m_rdbtnEnterCard.Name" xml:space="preserve">
-    <value>m_rdbtnEnterCard</value>
-  </data>
-  <data name="&gt;&gt;m_rdbtnEnterCard.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_rdbtnEnterCard.Parent" xml:space="preserve">
-    <value>m_rdbtn_SwipeEnter</value>
-  </data>
-  <data name="&gt;&gt;m_rdbtnEnterCard.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="m_rdbtn_SwipeEnter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 102</value>
-  </data>
-  <data name="m_rdbtn_SwipeEnter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>298, 33</value>
-  </data>
-  <data name="m_rdbtn_SwipeEnter.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="m_rdbtn_SwipeEnter.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;m_rdbtn_SwipeEnter.Name" xml:space="preserve">
-    <value>m_rdbtn_SwipeEnter</value>
-  </data>
-  <data name="&gt;&gt;m_rdbtn_SwipeEnter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;m_rdbtn_SwipeEnter.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;m_rdbtn_SwipeEnter.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
@@ -524,6 +404,6 @@ cards to analyze have been swiped.</value>
     <value>MagCardForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>GTI.Modules.Shared.EliteGradientForm, ManagedEliteModule, Version=1.3.42.1325, Culture=neutral, PublicKeyToken=f7ab3ec26b04c7cf</value>
+    <value>GTI.Modules.Shared.EliteGradientForm, ManagedEliteModule, Version=1.3.42.771, Culture=neutral, PublicKeyToken=f7ab3ec26b04c7cf</value>
   </data>
 </root>

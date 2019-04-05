@@ -49,6 +49,7 @@ namespace GTI.Modules.Shared
         protected string m_errorMessage = string.Empty;
         protected bool m_thirdPartyPlayerSync = true;
         protected bool m_noThirdPartySyncPointsAreGood = false;
+        protected int m_playersAge  = 0;
         #endregion
 
         #region Constructors
@@ -240,17 +241,30 @@ namespace GTI.Modules.Shared
                 // Is Logged In
                 m_isLoggedIn = responseReader.ReadBoolean();
 
-                m_PINError = responseReader.ReadBoolean();
+                //m_PINError = responseReader.ReadBoolean();
 
-                m_pointBalanceInvalid = responseReader.ReadBoolean();
+                //m_pointBalanceInvalid = responseReader.ReadBoolean();
 
-                if (m_pointBalanceInvalid)
-                    m_pointsBalance = 0M;
+                //if (m_pointBalanceInvalid)
+                //    m_pointsBalance = 0M;
 
-                m_thirdPartyInterfaceDown = responseReader.ReadBoolean();
+                //Player Club Points
+                //stringLen = responseReader.ReadUInt16();
+                //tempDec = new string(responseReader.ReadChars(stringLen));
 
-                stringLen = responseReader.ReadUInt16();
-                m_errorMessage = new string(responseReader.ReadChars(stringLen));
+
+                //Player Club Spend
+                //stringLen = responseReader.ReadUInt16();
+                //tempDec = new string(responseReader.ReadChars(stringLen));
+
+                //m_thirdPartyInterfaceDown = responseReader.ReadBoolean();
+
+                //stringLen = responseReader.ReadUInt16();
+                //m_playersAge = responseReader.ReadInt32();
+
+                //m_magCardNum = new string(responseReader.ReadChars(stringLen));
+
+                //m_errorMessage = new string(responseReader.ReadChars(stringLen));
             }
             catch(EndOfStreamException e)
             {

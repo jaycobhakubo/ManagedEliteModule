@@ -61,6 +61,7 @@ namespace GTI.Modules.Shared
         private decimal m_cashOnlyCredit = 0; // TTP 50114
         protected bool m_usedCouponScreen = false;
         protected object m_scheduledSalesObject = null;
+        protected object m_playersAge = 0;
 
         // JW 1-22-2008 
         private bool mbolIsCreditOnline = true;
