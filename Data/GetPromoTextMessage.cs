@@ -13,6 +13,7 @@ namespace GTI.Modules.Shared.Data
     {
         #region Member Variables
         private List<PromoInfo> m_promoData = new List<PromoInfo>();
+        private int m_operatorID = 0;
         #endregion
 
         #region Constructors
@@ -25,6 +26,21 @@ namespace GTI.Modules.Shared.Data
         #endregion
         
         #region Parameters
+        
+        //Get/Set the operator the text is for (0=current operator on server side).
+        public int Operator
+        {
+            get
+            {
+                return m_operatorID;
+            }
+
+            set
+            {
+                m_operatorID = value;
+            }
+        }
+
         public List<PromoInfo> PromoData
         {
             get
@@ -60,8 +76,16 @@ namespace GTI.Modules.Shared.Data
         #region Member Methods
         protected override void PackRequest()
         {
-            // Set the bytes to be sent
-            m_requestPayload = new byte[0];
+            MemoryStream requestStream = new MemoryStream();
+            BinaryWriter requestWriter = new BinaryWriter(requestStream, Encoding.Unicode);
+
+            requestWriter.Write(m_operatorID);
+
+            // Set the bytes to be sent.
+            m_requestPayload = requestStream.ToArray();
+
+            // Close the streams.
+            requestWriter.Close();
         }
 
         protected override void UnpackResponse()

@@ -61,7 +61,7 @@ namespace GTI.Modules.Shared
         private decimal m_cashOnlyCredit = 0; // TTP 50114
         protected bool m_usedCouponScreen = false;
         protected object m_scheduledSalesObject = null;
-        protected object m_playersAge = 0;
+        protected int m_age;
 
         // JW 1-22-2008 
         private bool mbolIsCreditOnline = true;
@@ -120,6 +120,7 @@ namespace GTI.Modules.Shared
             m_lastName = getMsg.LastName;
             m_govIssuedIdNum = getMsg.GovIssuedIdNumber;
             m_birthDate = getMsg.BirthDate;
+            m_age = getMsg.Age;
             m_email = getMsg.Email;
             m_playerIdent = getMsg.PlayerIdentity;
             m_phoneNum = getMsg.PhoneNumber;
@@ -424,6 +425,14 @@ namespace GTI.Modules.Shared
             set
             {
                 m_birthDate = value;
+            }
+        }
+
+        public int Age
+        {
+            get
+            {
+                return m_age;
             }
         }
 

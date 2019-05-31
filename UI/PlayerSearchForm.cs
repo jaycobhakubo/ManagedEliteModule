@@ -360,6 +360,9 @@ namespace GTI.Modules.Shared
                 try
                 {
                     cardMsg.Send();
+
+                    if (cardMsg.SyncError != string.Empty)
+                        throw new Exception(cardMsg.SyncError);
                 }
                 catch(ServerCommException ex)
                 {

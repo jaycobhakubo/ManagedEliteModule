@@ -122,8 +122,6 @@
     <Compile Include="Business\DiscountItem.cs" />
     <Compile Include="Business\DistributorFee.cs" />
     <Compile Include="Business\ExtensionMethods.cs" />
-    <Compile Include="Business\GeneralPlayerDrawing.cs" />
-    <Compile Include="Business\GeneralPlayerDrawingEvent.cs" />
     <Compile Include="Business\IntWordConverter.cs" />
     <Compile Include="Business\Location.cs" />
     <Compile Include="Business\Machine.cs" />
@@ -150,14 +148,7 @@
     <Compile Include="Data\BarcodeReader.cs" />
     <Compile Include="Data\ClientDataStoreAccessor.cs" />
     <Compile Include="Data\CommonValues.cs" />
-    <Compile Include="Data\AbortGeneralDrawingEventResultsNotificationsMessage.cs" />
-    <Compile Include="Data\InitiateGeneralDrawingEventResultsNotificationsMessage.cs" />
-    <Compile Include="Data\SetGeneralDrawingEventCancelledMessage.cs" />
-    <Compile Include="Data\ExecuteGeneralDrawingEventMessage.cs" />
-    <Compile Include="Data\GetGeneralDrawingEventsMessage.cs" />
-    <Compile Include="Data\GenerateGeneralDrawingsEventsMessage.cs" />
     <Compile Include="Data\FinalizeCardPositionMapMessage.cs" />
-    <Compile Include="Data\GetGeneralDrawingsMessage.cs" />
     <Compile Include="Data\GetProgramDataMessage.cs" />
     <Compile Include="Data\GetPromoTextMessage.cs" />
     <Compile Include="Data\RemoveCardPositionsMapMessage.cs" />
@@ -250,7 +241,6 @@
     <Compile Include="Data\SetCharityData.cs" />
     <Compile Include="Data\SetClientDataStoreMessage.cs" />
     <Compile Include="Data\SetDefaultValidationPackageMessage.cs" />
-    <Compile Include="Data\SetGeneralDrawingMessage.cs" />
     <Compile Include="Data\SetHallSettingsMessage.cs" />
     <Compile Include="Data\SetLocationData.cs" />
     <Compile Include="Data\SetMachineSettingsExMessage.cs" />

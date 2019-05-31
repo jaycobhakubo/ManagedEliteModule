@@ -248,10 +248,10 @@ namespace GTI.Modules.Shared
         #endregion
 
         #region Member Variables
-        protected string m_firstName;
-        protected string m_lastName;
-        protected string m_searchCategory;
-        protected List<PlayerListItem> m_players;
+        protected string m_firstName = "";
+        protected string m_lastName = "";
+        protected string m_searchCategory = "";
+        protected List<PlayerListItem> m_players = new List<PlayerListItem>();
         #endregion
 
         #region Constructors
@@ -277,15 +277,21 @@ namespace GTI.Modules.Shared
         /// Partial matches will be returned.  A blank last name means any 
         /// last name.</param>
        // public GetPlayerListMessage(string firstName, string lastName)
-            public GetPlayerListMessage(string searchCategory)
+        public GetPlayerListMessage(string searchCategory)
         {
             m_id = 8014; // Get Player List
             m_strMessageName = "Get Player List";
-            m_searchCategory = searchCategory;
-            //FirstName = firstName;
-            //LastName = lastName;
-            m_players = new List<PlayerListItem>();
+            SearchCategory = searchCategory;
         }
+
+        public GetPlayerListMessage(string firstName, string lastName)
+        {
+            m_id = 8014; // Get Player List
+            m_strMessageName = "Get Player List";
+            FirstName = firstName;
+            LastName = lastName;
+        }
+
         #endregion
 
         #region Member Methods
@@ -299,36 +305,20 @@ namespace GTI.Modules.Shared
             BinaryWriter requestWriter = new BinaryWriter(requestStream, Encoding.Unicode);
 
 
-                if(!string.IsNullOrEmpty(m_searchCategory))
+            if(FirstName == "" && LastName == "") //no names, send the category (even if it is empty)
             {
                 requestWriter.Write((ushort)m_searchCategory.Length);
-                requestWriter.Write(m_searchCategory.ToCharArray());
+
+                if(m_searchCategory.Length > 0)
+                    requestWriter.Write(m_searchCategory.ToCharArray());
             }
+            else //must be at least one name
+            {
+                string tmp = FirstName + (FirstName != "" && LastName != "" ? " " : "") + LastName;
 
-
-               //if(!string.IsNullOrEmpty(m_lastName))
-            //{
-            //    requestWriter.Write((ushort)m_lastName.Length);
-            //    requestWriter.Write(m_lastName.ToCharArray());
-            //}
-            //// Last Name
-            //if(!string.IsNullOrEmpty(m_lastName))
-            //{
-            //    requestWriter.Write((ushort)m_lastName.Length);
-            //    requestWriter.Write(m_lastName.ToCharArray());
-            //}
-            //else
-            //    requestWriter.Write((ushort)0);
-
-            //// First Name
-            //if(!string.IsNullOrEmpty(m_firstName))
-            //{
-            //    requestWriter.Write((ushort)m_firstName.Length);
-            //    requestWriter.Write(m_firstName.ToCharArray());
-            //}
-            else
-                requestWriter.Write((ushort)0);
-
+                requestWriter.Write((ushort)tmp.Length);
+                requestWriter.Write(tmp.ToCharArray());
+            }
 
             // Set the bytes to be sent.
             m_requestPayload = requestStream.ToArray();
@@ -396,13 +386,28 @@ namespace GTI.Modules.Shared
                     string dateTempValueString;
                     stringLen = responseReader.ReadUInt16();
                     dateTempValueString = new string(responseReader.ReadChars(stringLen));
-                    item.BirthDate = Convert.ToDateTime(dateTempValueString);
 
+                    try
+                    {
+                        item.BirthDate = Convert.ToDateTime(dateTempValueString);
+                    }
+                    catch
+                    {
+                        item.BirthDate = DateTime.MinValue;
+                    }
 
                     // LatVisitDate
                     stringLen = responseReader.ReadUInt16();
                     dateTempValueString = new string(responseReader.ReadChars(stringLen));
-                    item.LastVisitDate = Convert.ToDateTime(dateTempValueString);
+
+                    try
+                    {
+                        item.LastVisitDate = Convert.ToDateTime(dateTempValueString);
+                    }
+                    catch
+                    {
+                        item.LastVisitDate = DateTime.MinValue;
+                    }
 
                     m_players.Add(item);
                 }
@@ -421,34 +426,37 @@ namespace GTI.Modules.Shared
         }
         #endregion
 
+        #region Member Properties
 
-         public string SearchCategory
+        public string SearchCategory
         {
             get
             {
                 return m_searchCategory;
             }
+
             set
             {
-                if(value == null)
-                    m_searchCategory = null;
-                else if(value.Length <= StringSizes.MaxNameLength)
-                    m_searchCategory = value;
+                if (value == null)
+                {
+                    m_searchCategory = "";
+                }
+                else if (value.Length <= StringSizes.MaxNameLength)
+                {
+                    if (LastName != "" || FirstName != "")
+                        throw new Exception("Can't have a category and name.");
+                    else
+                        m_searchCategory = value;
+                }
                 else
+                {
                     throw new ArgumentException("Category search is too big.");
+                }
             }
         }
-
-
-
-        #region Member Properties
-
-
-        
-
+      
         /// <summary>
-        /// Gets or sets the first name to search for.  A blank first name means 
-        /// any first name.
+        /// Gets or sets the first name to search for.
         /// </summary>
          public string FirstName
          {
@@ -456,14 +464,24 @@ namespace GTI.Modules.Shared
              {
                  return m_firstName;
              }
+    
              set
              {
                  if (value == null)
-                     m_firstName = null;
+                 {
+                     m_firstName = "";
+                 }
                  else if (value.Length <= StringSizes.MaxNameLength)
-                     m_firstName = value;
+                 {
+                     if (SearchCategory != "")
+                         throw new Exception("Can't have a name and a category.");
+                     else
+                         m_firstName = value;
+                 }
                  else
+                 {
                      throw new ArgumentException("FirstName is too big.");
+                 }
              }
          }
 
@@ -477,14 +495,24 @@ namespace GTI.Modules.Shared
              {
                  return m_lastName;
              }
+             
              set
              {
                  if (value == null)
-                     m_lastName = null;
+                 {
+                     m_lastName = "";
+                 }
                  else if (value.Length <= StringSizes.MaxNameLength)
-                     m_lastName = value;
+                 {
+                     if (SearchCategory != "")
+                         throw new Exception("Can't have a name and a category.");
+                     else
+                         m_lastName = value;
+                 }
                  else
+                 {
                      throw new ArgumentException("LastName is too big.");
+                 }
              }
          }
 

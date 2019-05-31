@@ -20,11 +20,13 @@ namespace GTI.Modules.Shared.Data
     public class SetPromoTextMessage : ServerMessage
     {
         #region Member variables and classes
+        private int m_operatorID = 0;
         private List<PromoInfo> m_promoData = new List<PromoInfo>();
         private List<PromoInfo> m_originalPromoData = null;
         #endregion
 
         #region Member Properties
+
         public string[] PromoDataFromTextArray
         {
             set
@@ -98,18 +100,20 @@ namespace GTI.Modules.Shared.Data
             m_id = 18263; // Modify Channel Data Message
         }
 
-        public SetPromoTextMessage(string[] promoData, List<PromoInfo> originalPromoData = null)
+        public SetPromoTextMessage(int operatorID, string[] promoData, List<PromoInfo> originalPromoData = null)
         {
             m_id = 18263; // Modify Channel Data Message
             PromoDataFromTextArray = promoData;
             OriginalPromoData = originalPromoData;
+            m_operatorID = operatorID;
         }
 
-        public SetPromoTextMessage(List<PromoInfo> promoData, List<PromoInfo> originalPromoData = null)
+        public SetPromoTextMessage(int operatorID, List<PromoInfo> promoData, List<PromoInfo> originalPromoData = null)
         {
             m_id = 18263; // Modify Channel Data Message
             m_promoData = promoData;
             OriginalPromoData = originalPromoData;
+            m_operatorID = operatorID;
         }
         #endregion
 
@@ -122,6 +126,8 @@ namespace GTI.Modules.Shared.Data
             // Create the streams that will be written to
             MemoryStream requestStream = new MemoryStream();
             BinaryWriter requestWriter = new BinaryWriter(requestStream, Encoding.Unicode);
+
+            requestWriter.Write(m_operatorID);
 
             Dictionary<string, object> orig = new Dictionary<string,object>();
             Dictionary<string, object> promo = new Dictionary<string,object>();
@@ -174,7 +180,7 @@ namespace GTI.Modules.Shared.Data
                     addOrUpdate.Add(pi);
                 }
             }
-            
+
             requestWriter.Write((int)addOrUpdate.Count);
 
             foreach(PromoInfo pi in addOrUpdate)

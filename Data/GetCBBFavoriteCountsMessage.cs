@@ -20,6 +20,7 @@ namespace GTI.Modules.Shared
         #region Member Variables
         protected int m_playerId;
         protected Dictionary<short, int> m_counts = new Dictionary<short, int>();
+        protected List<string> m_favoriteNumbers = new List<string>();
         #endregion
 
         #region Constructors
@@ -80,23 +81,40 @@ namespace GTI.Modules.Shared
                 // Get the count of numbers.
                 ushort numberCount = responseReader.ReadUInt16();
 
-                // Read all the favorites.
-                for(ushort x = 0; x < numberCount; x++)
+                if (numberCount != 0)
                 {
-                    // Numbers Required
-                    short numsRequired = responseReader.ReadByte();
+                    short numsRequired = 0;
+                    ushort stringLen;
+                    string CBBNumbers = "";
 
-                    // Number of Favorites
-                    int favorites = responseReader.ReadInt32();
+                    // Read all the favorites.
+                    for (ushort x = 0; x < numberCount; x++)
+                    {
+                        // Numbers Required
+                        numsRequired = responseReader.ReadByte();
 
-                    m_counts.Add(numsRequired, favorites);
+                        try
+                        {
+                            m_counts[numsRequired] = m_counts[numsRequired] + 1;
+                        }
+                        catch (KeyNotFoundException)
+                        {
+                            m_counts[numsRequired] = 1;
+                        }
+
+                        // The numbers                    
+                        stringLen = responseReader.ReadUInt16();
+                        CBBNumbers = new string(responseReader.ReadChars(stringLen));
+
+                        m_favoriteNumbers.Add(CBBNumbers);
+                    }
                 }
             }
-            catch(EndOfStreamException e)
+            catch (EndOfStreamException e)
             {
                 throw new MessageWrongSizeException("Get Player Favorite CBB Numbers Counts", e);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw new ServerException("Get Player Favorite CBB Numbers Counts", e);
             }
@@ -132,6 +150,16 @@ namespace GTI.Modules.Shared
                 return m_counts;
             }
         }
+
+        //Gets a list of favorite card numbers in sorted order
+        public List<string> FavoriteNumbers
+        {
+            get
+            {
+                return m_favoriteNumbers;
+            }
+        }
+
         #endregion
     }
 }

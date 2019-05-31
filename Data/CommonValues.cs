@@ -855,7 +855,7 @@ namespace GTI.Modules.Shared
         EditDailyMenu = 49, // US1772
         PurgePlayerPoints = 66,
         CardPositionMapManagement = 67,
-        RemovedCouponToPlayer = 69,
+        RemovedCouponToPlayer = 72,
     }
     
     /// <summary>

@@ -28,6 +28,7 @@ namespace GTI.Modules.Shared
         protected bool m_pointsUpToDate = false;
         protected bool m_thirdPartyInterfaceDown = false;
         protected bool m_thirdPartyPlayerSync = true;
+        protected string m_thirdPartyErrorMessage = string.Empty;
         #endregion
 
         #region Constructors
@@ -113,8 +114,12 @@ namespace GTI.Modules.Shared
                 // Third party interface down
                 m_thirdPartyInterfaceDown = responseReader.ReadBoolean();
 
-                // First Name
+                // Third party interface error
                 ushort stringLen = responseReader.ReadUInt16();
+                m_thirdPartyErrorMessage = new string(responseReader.ReadChars(stringLen));
+
+                // First Name
+                stringLen = responseReader.ReadUInt16();
                 m_firstName = new string(responseReader.ReadChars(stringLen));
 
                 // Middle Initial
@@ -226,6 +231,17 @@ namespace GTI.Modules.Shared
             get
             {
                 return m_thirdPartyInterfaceDown;
+            }
+        }
+
+        /// <summary>
+        /// Gets a string with a returned error message.
+        /// </summary>
+        public string SyncError
+        {
+            get
+            {
+                return m_thirdPartyErrorMessage;
             }
         }
 

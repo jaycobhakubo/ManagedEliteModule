@@ -774,6 +774,7 @@ namespace GTI.Modules.Shared
         protected List<string> m_paperPackInfoItems = new List<string>();
         protected SaleTender[] m_saleTenders;
         protected List<string> m_afterReceiptText = new List<string>();
+        protected List<Tuple<string, int, DateTime>> m_drawingEntries = new List<Tuple<string, int, DateTime>>();
         #endregion
 
         #region Member Methods
@@ -1193,6 +1194,70 @@ namespace GTI.Modules.Shared
                 m_printer.AddLine(string.Empty, StringAlignment.Center, m_fontMedium);
                 m_printer.AddLine(string.Empty, StringAlignment.Center, m_fontMedium);
             }
+        }
+
+        protected void PrintDrawingEntryInfo()
+        {
+            if (DrawingEntries.Count == 0)
+                return;
+
+            Font ourFont = m_fontMedium;
+            string longestText = "";
+            float widest = 0;
+            List<string> drawingText = new List<string>();
+            int margin = 0;//         (int)m_printer.MeasureString("W", ourFont, StringAlignment.Near).Width * 2;
+
+            drawingText.Add("Drawings:");
+
+            //fit the text
+            foreach (Tuple<string, int, DateTime> entry in DrawingEntries)
+            {
+                string text = entry.Item1;
+                float w = m_printer.MeasureString(text, ourFont, StringAlignment.Near).Width;
+
+                if (w > widest)
+                {
+                    widest = w;
+                    longestText = text;
+                }
+
+                drawingText.Add(text);
+                
+                if(entry.Item3 != DateTime.MinValue)
+                    text = "On " + entry.Item3.ToString("MM/dd/yy");
+                else
+                    text = "           ";
+
+                text += "  Entries= " + entry.Item2.ToString();
+                w = m_printer.MeasureString(text, ourFont, StringAlignment.Near).Width;
+
+                if (w > widest)
+                {
+                    widest = w;
+                    longestText = text;
+                }
+
+                drawingText.Add(text);
+                drawingText.Add(" ");
+            }
+
+            if ((int)widest >= (int)m_printer.PrintableArea.Width - margin)
+            {
+                float size = ourFont.Size - 1;
+
+                ourFont = new Font(ourFont.FontFamily, size, FontStyle.Regular);
+
+                while ((int)m_printer.MeasureString(longestText, ourFont, StringAlignment.Near).Width >= (int)m_printer.PrintableArea.Width - margin && size > 2)
+                {
+                    size--;
+                    ourFont = new Font(ourFont.FontFamily, size, FontStyle.Regular);
+                }
+            }
+
+            foreach (string text in drawingText)
+                m_printer.AddLine(text, StringAlignment.Near, ourFont);
+
+            m_printer.AddLine(" ", StringAlignment.Center, m_fontMedium);
         }
 
         /// <summary>
@@ -1955,6 +2020,7 @@ namespace GTI.Modules.Shared
             Font ourFont = m_fontMedium;
             string longestText = "";
             float widest = 0;
+            bool lastLineWasBarcode = false;
 
             //fit the text
             foreach (string text in AfterReceiptText)
@@ -1988,18 +2054,33 @@ namespace GTI.Modules.Shared
             {
                 if (text.Length == 3 && text.ToUpper() == "CUT") //cut
                 {
+                    if (!lastLineWasBarcode)
+                    {
+                        m_printer.AddLine(" ", StringAlignment.Center, m_fontMedium);
+                        m_printer.AddLine(" ", StringAlignment.Center, m_fontMedium);
+                    }
+
                     m_printer.AddLine(DateTime.Now.ToString(), StringAlignment.Center, m_fontMedium);
                     m_printer.Print();
                     m_printer.ClearLines();
+                    lastLineWasBarcode = false;
                 }
                 else if (text.Length > 8 && text.ToUpper().Substring(0, 8) == "CODE128=") //print a barcode
                 {
                     PrintBarcode(text.Substring(8));
+                    lastLineWasBarcode = true;
                 }
                 else
                 {
                     m_printer.AddLine(text, StringAlignment.Center, ourFont);
+                    lastLineWasBarcode = false;
                 }
+            }
+
+            if (!lastLineWasBarcode)
+            {
+                m_printer.AddLine(" ", StringAlignment.Center, m_fontMedium);
+                m_printer.AddLine(" ", StringAlignment.Center, m_fontMedium);
             }
 
             m_printer.AddLine(DateTime.Now.ToString(), StringAlignment.Center, m_fontMedium);
@@ -2175,6 +2256,9 @@ namespace GTI.Modules.Shared
 
             // Print player information.
             PrintPlayerInfo(printPointInfo, printPtsRedeemed);
+
+            // Print drawing entry information
+            PrintDrawingEntryInfo();
 
             // Print sales items.
             PrintSaleInfo(printPointInfo.Item1, printSignatureLine, printPtsRedeemed, merchantCopy);
@@ -3088,6 +3172,19 @@ namespace GTI.Modules.Shared
             set
             {
                 m_afterReceiptText = value;
+            }
+        }
+
+        public List<Tuple<string, int, DateTime>> DrawingEntries
+        {
+            get
+            {
+                return m_drawingEntries;
+            }
+
+            set
+            {
+                m_drawingEntries = value;
             }
         }
 
