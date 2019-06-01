@@ -146,6 +146,7 @@
     <Compile Include="Data\AddRemoveFindScanCodeMessage.cs" />
     <Compile Include="Data\AddToAuditLogMessage.cs" />
     <Compile Include="Data\BarcodeReader.cs" />
+    <Compile Include="Data\CBBUniqueItem.cs" />
     <Compile Include="Data\ClientDataStoreAccessor.cs" />
     <Compile Include="Data\CommonValues.cs" />
     <Compile Include="Data\FinalizeCardPositionMapMessage.cs" />

@@ -11,6 +11,8 @@ using System.Globalization;
 using System.Collections.Generic;
 using GTI.Modules.Shared;
 using GTI.Modules.Shared.Properties;
+using GTI.Modules.Shared.Data;
+using System.Text;
 
 namespace GTI.Modules.Shared
 {
@@ -62,6 +64,7 @@ namespace GTI.Modules.Shared
         protected bool m_usedCouponScreen = false;
         protected object m_scheduledSalesObject = null;
         protected int m_age;
+        protected List<CBBUniqueItem> m_CBBDuplicatesList = new List<CBBUniqueItem>();
 
         // JW 1-22-2008 
         private bool mbolIsCreditOnline = true;
@@ -73,6 +76,7 @@ namespace GTI.Modules.Shared
         //protected string DaysOfWeek = string.Empty;
 
         private Dictionary<short, int> m_cbbFavoriteCount = new Dictionary<short, int>(); // Rally US507
+        protected List<string> m_cbbFavoriteNumbers = new List<string>();
         #endregion
 
         #region Constructors
@@ -202,6 +206,8 @@ namespace GTI.Modules.Shared
                 m_cbbFavoriteCount.Add(pair.Key, pair.Value);
             }
 
+            m_cbbFavoriteNumbers = favoritesMsg.FavoriteNumbers;
+
             CreditModuleOnline col = new CreditModuleOnline();
 
             /*          Debug Code             */
@@ -309,6 +315,35 @@ namespace GTI.Modules.Shared
                 return m_cbbFavoriteCount[pickCount];
             else
                 return 0;
+        }
+
+        public void UpdateCBBFavoriteInfo(bool eraseFavorites = false)
+        {
+            GetPlayerCBBFavoriteCountsMessage favoritesMsg = new GetPlayerCBBFavoriteCountsMessage(m_id);
+            
+            favoritesMsg.EraseFavorites = eraseFavorites;
+
+            favoritesMsg.Send();
+
+            m_cbbFavoriteCount.Clear();
+
+            foreach(KeyValuePair<short, int> pair in favoritesMsg.FavoriteCounts)
+            {
+                m_cbbFavoriteCount.Add(pair.Key, pair.Value);
+            }
+
+            m_cbbFavoriteNumbers = favoritesMsg.FavoriteNumbers;
+        }
+
+        /// <summary>
+        /// Gets a list of the sorted favorite CBB numbers for this player
+        /// </summary>
+        public List<string> CBBFavoriteNumbers
+        {
+            get
+            {
+                return m_cbbFavoriteNumbers;
+            }
         }
         #endregion
 
@@ -433,6 +468,19 @@ namespace GTI.Modules.Shared
             get
             {
                 return m_age;
+            }
+        }
+
+        public List<CBBUniqueItem> CBBDuplicatesList
+        {
+            get
+            {
+                return m_CBBDuplicatesList;
+            }
+
+            set
+            {
+                m_CBBDuplicatesList = value;
             }
         }
 
@@ -904,6 +952,20 @@ namespace GTI.Modules.Shared
         {
             get
             {
+                if (m_ErrorMessage.Contains("rror"))
+                {
+                    StringBuilder tmp = new StringBuilder();
+
+                    for (int x = 0; x < m_ErrorMessage.Length; x++)
+                    {
+                        if (m_ErrorMessage[x] > ' ' && m_ErrorMessage[x] != '.')
+                            tmp.Append(m_ErrorMessage[x]);
+
+                        if (tmp.ToString().ToLower() == "error:serverdown")
+                            return "Player tracking on casino side is down.";
+                    }
+                }
+
                 return m_ErrorMessage;
             }
         }

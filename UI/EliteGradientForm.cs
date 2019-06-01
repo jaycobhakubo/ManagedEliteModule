@@ -72,6 +72,16 @@ namespace GTI.Modules.Shared
         /// event data.</param>
         protected override void OnPaintBackground(PaintEventArgs e)
         {
+            //if (DesignMode && DrawingRounded && (Region.GetBounds(e.Graphics).Width != Size.Width || Region.GetBounds(e.Graphics).Height != Size.Height)) //make a clipping region out of a rectangle with rounded corners
+            //{
+            //    using (GraphicsPath path = GetRoundRectangle(0, m_outerRadius))
+            //        Region = new Region(path);
+
+            //    Invalidate();
+
+            //    return;
+            //}
+
             base.OnPaintBackground(e);
 
             if (ClientRectangle.Width > 0 && ClientRectangle.Height > 0)
@@ -177,6 +187,14 @@ namespace GTI.Modules.Shared
                         pathIn.Dispose();
                 }
             }
+        }
+
+        protected override void OnSizeChanged(EventArgs e)
+        {
+            base.OnSizeChanged(e);
+            Form_SizeChanged(null, e);
+            Invalidate();
+            Update();
         }
 
         private void Form_SizeChanged(object sender, EventArgs e)

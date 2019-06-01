@@ -241,12 +241,19 @@ namespace GTI.Modules.Shared
 
                 // Is Logged In
                 m_isLoggedIn = responseReader.ReadBoolean();
-                
+
+                // Was there a PIN error?
+                m_PINError = responseReader.ReadBoolean();
+
+                // Are the points valid?
+                m_pointBalanceInvalid = responseReader.ReadBoolean();
+
+                // Is the player tracking interface down?
                 m_thirdPartyInterfaceDown = responseReader.ReadBoolean();
 
+                // Get player tracking error message
                 stringLen = responseReader.ReadUInt16();
                 m_errorMessage = new string(responseReader.ReadChars(stringLen));
-
             }
             catch(EndOfStreamException e)
             {

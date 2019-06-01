@@ -733,6 +733,9 @@ namespace GTI.Modules.Shared
         PromoTextAfterReceiptAtPOSRequiresPlayer = 452,
         ForceMenuButtonAuthorization = 453,
 
+        AllowCBBDuplicates = 454,
+        EnableCBBHandPicks = 455,
+
     }   // (note: C# doesn't complain about the extra comma on the last item, so you don't have to change that line when adding a new item )
 
     /// <summary>
@@ -996,6 +999,8 @@ namespace GTI.Modules.Shared
         // END: TA7626
         Validation = 18,
         BonusValidation = 19,
+        Bundle = 20,
+        CrystalBallFavorites = 21
     }
 
     /// <summary>

@@ -8,4 +8,9 @@
     <StartProgram>d:\GameTech\Common\EliteMCP.exe</StartProgram>
     <StartArguments>-server=10.10.0.20 -window -runonce -guid={BF874654-BCEC-4c87-996A-55F4789F1EAA}</StartArguments>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <StartProgram>d:\GameTech\Common\EliteMCP.exe</StartProgram>
+    <StartArguments>-server=10.10.0.20 -window -runonce -guid={BF874654-BCEC-4c87-996A-55F4789F1EAA}</StartArguments>
+    <StartAction>Program</StartAction>
+  </PropertyGroup>
 </Project>

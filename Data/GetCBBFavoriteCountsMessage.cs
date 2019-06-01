@@ -21,6 +21,7 @@ namespace GTI.Modules.Shared
         protected int m_playerId;
         protected Dictionary<short, int> m_counts = new Dictionary<short, int>();
         protected List<string> m_favoriteNumbers = new List<string>();
+        protected bool m_eraseFavorites = false;
         #endregion
 
         #region Constructors
@@ -50,6 +51,9 @@ namespace GTI.Modules.Shared
 
             // Player Id
             requestWriter.Write(m_playerId);
+
+            // Erase?
+            requestWriter.Write(m_eraseFavorites);
 
             // Set the bytes to be sent.
             m_requestPayload = requestStream.ToArray();
@@ -137,6 +141,22 @@ namespace GTI.Modules.Shared
             set
             {
                 m_playerId = value;
+            }
+        }
+
+        /// <summary>
+        /// Get/set if this message will erase all of the player's favorite CBB numbers.
+        /// </summary>
+        public bool EraseFavorites
+        {
+            get
+            {
+                return m_eraseFavorites;
+            }
+
+            set
+            {
+                m_eraseFavorites = value;
             }
         }
 

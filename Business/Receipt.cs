@@ -1205,7 +1205,6 @@ namespace GTI.Modules.Shared
             string longestText = "";
             float widest = 0;
             List<string> drawingText = new List<string>();
-            int margin = 0;//         (int)m_printer.MeasureString("W", ourFont, StringAlignment.Near).Width * 2;
 
             drawingText.Add("Drawings:");
 
@@ -1222,8 +1221,8 @@ namespace GTI.Modules.Shared
                 }
 
                 drawingText.Add(text);
-                
-                if(entry.Item3 != DateTime.MinValue)
+
+                if (entry.Item3 != DateTime.MinValue)
                     text = "On " + entry.Item3.ToString("MM/dd/yy");
                 else
                     text = "           ";
@@ -1241,13 +1240,13 @@ namespace GTI.Modules.Shared
                 drawingText.Add(" ");
             }
 
-            if ((int)widest >= (int)m_printer.PrintableArea.Width - margin)
+            if ((int)widest >= (int)m_printer.PrintableArea.Width)
             {
                 float size = ourFont.Size - 1;
 
                 ourFont = new Font(ourFont.FontFamily, size, FontStyle.Regular);
 
-                while ((int)m_printer.MeasureString(longestText, ourFont, StringAlignment.Near).Width >= (int)m_printer.PrintableArea.Width - margin && size > 2)
+                while ((int)m_printer.MeasureString(longestText, ourFont, StringAlignment.Near).Width >= (int)m_printer.PrintableArea.Width && size > 2)
                 {
                     size--;
                     ourFont = new Font(ourFont.FontFamily, size, FontStyle.Regular);
