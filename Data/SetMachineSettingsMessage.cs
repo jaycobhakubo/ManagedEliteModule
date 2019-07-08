@@ -7,13 +7,20 @@ namespace GTI.Modules.Shared
 {
     public class SetMachineSettingsMessage : ServerMessage
     {
+        public struct SetMachineSettingsDataItem
+        {
+            public int settingId;
+            public string settingValue;
+            public bool useGlobalValue;
+        }
+
         private int mMachineID = 0;
-        private SettingValue[] mSettings;
-        public SetMachineSettingsMessage(int machineID, SettingValue[] settings)
+        private SetMachineSettingsDataItem[] mSettings;
+        public SetMachineSettingsMessage(int machineID, SetMachineSettingsDataItem[] settings)
         {
             m_id = 18088;
             mMachineID = machineID;
-            mSettings = new SettingValue [settings.Length];
+            mSettings = new SetMachineSettingsDataItem[settings.Length];
             settings.CopyTo(mSettings, 0);
         }
 
@@ -34,12 +41,13 @@ namespace GTI.Modules.Shared
             requestWriter.Write((ushort)mSettings.Length);
             for (int iSetting = 0; iSetting < mSettings.Length; iSetting++)
             {
-                requestWriter.Write(mSettings[iSetting].Id);
-                requestWriter.Write((ushort)mSettings[iSetting].Value.Length);
-                if (mSettings[iSetting].Value.Length > 0)
+                requestWriter.Write(mSettings[iSetting].settingId);
+                requestWriter.Write((ushort)mSettings[iSetting].settingValue.Length);
+                if (mSettings[iSetting].settingValue.Length > 0)
                 {
-                    requestWriter.Write(mSettings[iSetting].Value.ToCharArray());
+                    requestWriter.Write(mSettings[iSetting].settingValue.ToCharArray());
                 }
+                requestWriter.Write(mSettings[iSetting].useGlobalValue);
             }
             // Set the bytes to be sent.
             m_requestPayload = requestStream.ToArray();

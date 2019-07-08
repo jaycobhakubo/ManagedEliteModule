@@ -526,6 +526,7 @@ namespace GTI.Modules.Shared
         protected int m_fontSmallMaxChars;
         protected bool m_saleSuccess;
         protected string m_machineDesc = null;
+        protected string m_voidedAtMachineDesc = null;
         protected bool m_printPlayerIdentityAsAccountNumber = false;
         protected bool m_printPlayerID = true;
 
@@ -638,6 +639,27 @@ namespace GTI.Modules.Shared
                 m_machineDesc = value;
             }
         }
+
+        public string VoidedAtMachineDesc
+        {
+            get
+            {
+                if (m_voidedAtMachineDesc == null) //assume this machine
+                {
+                    ModuleComm modComm = new ModuleComm();
+
+                    m_voidedAtMachineDesc = modComm.GetMachineDescription();
+                }
+
+                return m_voidedAtMachineDesc;
+            }
+
+            set
+            {
+                m_voidedAtMachineDesc = value;
+            }
+        }
+
         #endregion
     }
 
@@ -4628,8 +4650,8 @@ namespace GTI.Modules.Shared
             }
 
             //Machine name
-            temp = MachineDesc.PadRight(m_headerMachineDescLength).Substring(0, m_headerMachineDescLength);
-            m_printer.AddLine(temp, StringAlignment.Near, m_fontSmall);
+            temp = VoidedAtMachineDesc.PadRight(m_headerMachineDescLength).Substring(0, m_headerMachineDescLength);
+            m_printer.AddLine("".PadRight(m_headerColumn1Length + m_headerColumn2Length) + temp, StringAlignment.Near, m_fontSmall);
 
             // Cashier (Staff)
             temp = Resources.VoidReceiptStaff.PadRight(m_headerColumn1Length) + m_voidCashier;
@@ -4661,6 +4683,7 @@ namespace GTI.Modules.Shared
             }
 
             //Machine name
+            
             temp = MachineDesc.PadRight(m_headerMachineDescLength).Substring(0, m_headerMachineDescLength);
             m_printer.AddLine(temp, StringAlignment.Near, m_fontSmall);
 

@@ -7,9 +7,16 @@ namespace GTI.Modules.Shared
 {
     public class SetMachineSettingsExMessage : ServerMessage
     {
+        public struct SetMachineSettingsExDataItem
+        {
+            public int settingId;
+            public string settingValue;
+            public bool useGlobalValue;
+        }
+
         private Int32[] m_arrMachineIDs;
-        private SettingValue[] m_arrSettings;
-		public SetMachineSettingsExMessage(Int32[] arrMachineIDs, SettingValue[] arrSettings)
+        private SetMachineSettingsExDataItem[] m_arrSettings;
+        public SetMachineSettingsExMessage(Int32[] arrMachineIDs, SetMachineSettingsExDataItem[] arrSettings)
         {
             m_id = 18118;
 			m_arrMachineIDs = arrMachineIDs;
@@ -40,15 +47,15 @@ namespace GTI.Modules.Shared
 				requestWriter.Write((ushort)m_arrSettings.Length);
 				for (int iSetting = 0; iSetting < m_arrSettings.Length; iSetting++)
 				{
-					requestWriter.Write(m_arrSettings[iSetting].Id);
-					requestWriter.Write((ushort)m_arrSettings[iSetting].Value.Length);
-					if (m_arrSettings[iSetting].Value.Length > 0)
+					requestWriter.Write(m_arrSettings[iSetting].settingId);
+					requestWriter.Write((ushort)m_arrSettings[iSetting].settingValue.Length);
+                    if (m_arrSettings[iSetting].settingValue.Length > 0)
 					{
-						requestWriter.Write(m_arrSettings[iSetting].Value.ToCharArray());
+                        requestWriter.Write(m_arrSettings[iSetting].settingValue.ToCharArray());
 					}
+                    requestWriter.Write(m_arrSettings[iSetting].useGlobalValue);
 				}
 			}
-
 
             // Set the bytes to be sent.
             m_requestPayload = requestStream.ToArray();

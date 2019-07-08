@@ -251,6 +251,7 @@ namespace GTI.Modules.Shared
         protected string m_firstName = "";
         protected string m_lastName = "";
         protected string m_searchCategory = "";
+        protected string m_magCardNumberString = "";
         protected List<PlayerListItem> m_players = new List<PlayerListItem>();
         #endregion
 
@@ -259,8 +260,9 @@ namespace GTI.Modules.Shared
         /// Initializes a new instance of the GetPlayerListMessage class.
         /// </summary>
         public GetPlayerListMessage()
+            :this(null, null, null)
             //: this(null, null)
-             : this(null)
+            //: this(null)
         {
         }
 
@@ -277,19 +279,29 @@ namespace GTI.Modules.Shared
         /// Partial matches will be returned.  A blank last name means any 
         /// last name.</param>
        // public GetPlayerListMessage(string firstName, string lastName)
-        public GetPlayerListMessage(string searchCategory)
+
+        public GetPlayerListMessage(string searchCategory)//OLD
         {
             m_id = 8014; // Get Player List
             m_strMessageName = "Get Player List";
             SearchCategory = searchCategory;
         }
 
-        public GetPlayerListMessage(string firstName, string lastName)
+        public GetPlayerListMessage(string firstName, string lastName)//OLD
         {
             m_id = 8014; // Get Player List
             m_strMessageName = "Get Player List";
             FirstName = firstName;
             LastName = lastName;
+        }
+
+        public GetPlayerListMessage(string firstName, string lastName, string playerCardNumber)
+        {
+            m_id = 8014; // Get Player List
+            m_strMessageName = "Get Player List";
+            FirstName = firstName;
+            LastName = lastName;
+            MagCardNumberString = playerCardNumber;
         }
 
         #endregion
@@ -304,26 +316,16 @@ namespace GTI.Modules.Shared
             MemoryStream requestStream = new MemoryStream();
             BinaryWriter requestWriter = new BinaryWriter(requestStream, Encoding.Unicode);
 
+            requestWriter.Write((ushort)m_lastName.Length);
+            requestWriter.Write(m_lastName.ToCharArray());
 
-            if(FirstName == "" && LastName == "") //no names, send the category (even if it is empty)
-            {
-                requestWriter.Write((ushort)m_searchCategory.Length);
+            requestWriter.Write((ushort) m_firstName.Length);
+            requestWriter.Write(m_firstName.ToCharArray());
 
-                if(m_searchCategory.Length > 0)
-                    requestWriter.Write(m_searchCategory.ToCharArray());
-            }
-            else //must be at least one name
-            {
-                string tmp = FirstName + (FirstName != "" && LastName != "" ? " " : "") + LastName;
+            requestWriter.Write((ushort)m_magCardNumberString.Length);
+            requestWriter.Write( m_magCardNumberString.ToCharArray());
 
-                requestWriter.Write((ushort)tmp.Length);
-                requestWriter.Write(tmp.ToCharArray());
-            }
-
-            // Set the bytes to be sent.
             m_requestPayload = requestStream.ToArray();
-
-            // Close the streams.
             requestWriter.Close();
         }
 
@@ -512,6 +514,37 @@ namespace GTI.Modules.Shared
                  else
                  {
                      throw new ArgumentException("LastName is too big.");
+                 }
+             }
+         }
+
+         /// <summary>
+         /// Gets or sets the last name to search for.  A blank last name means 
+         /// any last name.
+         /// </summary>
+         public string MagCardNumberString
+         {
+             get
+             {
+                 return m_magCardNumberString;
+             }
+
+             set
+             {
+                 if (value == null)
+                 {
+                     m_magCardNumberString = "";
+                 }
+                 else if (value.Length <= StringSizes.MaxNameLength)
+                 {
+                     if (SearchCategory != "")
+                         throw new Exception("Can't have a magcard number and a category.");
+                     else
+                         m_magCardNumberString = value; //m_lastName = value;
+                 }
+                 else
+                 {
+                     throw new ArgumentException("MagCardNumber is too big.");
                  }
              }
          }
