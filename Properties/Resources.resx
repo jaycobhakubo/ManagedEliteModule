@@ -362,7 +362,7 @@
     <value>Game {0}:</value>
   </data>
   <data name="ReceiptGamingDate" xml:space="preserve">
-    <value>Gaming Date:</value>
+    <value>Trans Date:</value>
   </data>
   <data name="ReceiptMachineName" xml:space="preserve">
     <value>Machine:</value>

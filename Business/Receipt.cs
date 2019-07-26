@@ -1,6 +1,6 @@
 // This is an unpublished work protected under the copyright laws of the
 // United States and other countries.  All rights reserved.  Should
-// publication occur the following will apply:  © 2012 GameTech
+// publication occur the following will apply:  © 2019 GameTech
 // International, Inc.
 
 //US2131 add transaction date/time  to receipt reprints
@@ -22,6 +22,7 @@
 //US4804: Linear game numbers in the Edge system.
 //US4847: POS: Add the total due, total drop, over short to the denomination slip
 //US4848: Add signature lines to void receipts
+// DE14452 Drawing is printed on the receipt when display text is set to Raffle.
 
 using System;
 using System.Drawing;
@@ -738,6 +739,8 @@ namespace GTI.Modules.Shared
         protected int m_cardNumberLength;
         protected int m_cbbCardNumbersPerLine; // Rally US505
 
+        protected string m_raffleDrawingText; // DE14452
+
         protected bool m_isReprint;
         protected bool m_isReturn; // Rally DE1863 - Add the wording "Return" on a receipt printed when in return mode.
         protected string m_operatorHeaderLine1;
@@ -1228,7 +1231,7 @@ namespace GTI.Modules.Shared
             float widest = 0;
             List<string> drawingText = new List<string>();
 
-            drawingText.Add("Drawings:");
+            drawingText.Add(RaffleDrawingText + "(s):");
 
             //fit the text
             foreach (Tuple<string, int, DateTime> entry in DrawingEntries)
@@ -3115,6 +3118,13 @@ namespace GTI.Modules.Shared
             {
                 m_disclaimer3 = value;
             }
+        }
+
+        // DE14452
+        public string RaffleDrawingText
+        {
+            get { return m_raffleDrawingText; }
+            set { m_raffleDrawingText = value; }
         }
 
         /// <summary>
